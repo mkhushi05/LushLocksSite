@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="About Lynda at LushLocks & Beauty — 15+ years expertise in advanced aesthetics and beauty. Certified, insured, and passionate about your confidence. Based in Romford, Essex." />
+    <title>About Lynda | LushLocks & Beauty — Advanced Aesthetics</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 36px 0;
+        }
+
+        .credential-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition);
+        }
+
+        .credential-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-3px);
+        }
+
+        .credential-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--champagne);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-dark);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .credential-card h4 {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+
+        .credential-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px 28px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            border-color: rgba(201, 169, 110, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .value-card h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/images/logo.png" alt="LushLocks Logo" onerror="this.style.display='none'" />
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">LushLocks</span>
+                <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="policy.html">Policies</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="tel:07538312192" class="nav-icon-btn"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/447538312192" target="_blank" rel="noopener" class="nav-icon-btn whatsapp"><i
+                    class="fa-brands fa-whatsapp"></i></a>
+            <a href="contact.html#book" class="nav-book-btn">Book Now</a>
+        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <div class="mobile-nav">
+        <button class="mobile-nav-close"><i class="fa-solid fa-xmark"></i></button>
+        <a href="index.html">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="policy.html">Policies</a>
+        <div class="mobile-nav-actions">
+            <a href="tel:07538312192" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/447538312192" target="_blank" class="btn btn-primary"><i
+                    class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image:url('assets/images/about-bg.png');"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>About</span>
+            </div>
+            <h1 class="headline">About Lynda</h1>
+            <p class="lead" style="color:rgba(255,255,255,0.75);max-width:500px;">15+ years of beauty expertise. Your
+                confidence is my passion.</p>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="section" style="background:var(--cream);">
+        <div class="container">
+            <div class="about-grid">
+
+                <div class="about-image-wrap reveal">
+                    <img src="assets/images/pose-in-sun.jpg" alt="LushLocks Clinic" class="about-image-main" />
+                    <div class="about-badge">
+                        <span class="years" data-target="15" data-suffix="+">15+</span>
+                        <span class="years-label">Years<br />Expert</span>
+                    </div>
+                </div>
+
+                <div class="about-content reveal reveal-delay-2">
+                    <p class="eyebrow">My Story</p>
+                    <div class="gold-divider"><span>✦</span></div>
+                    <h2 class="headline">Hi, I'm <em>Lynda</em></h2>
+                    <p class="lead">"Beauty isn't just about looking good — it's about feeling it, too."</p>
+
+                    <p class="body-text" style="margin-bottom:16px;">
+                        I've been passionate about beauty and aesthetics for over 15 years. What began as a deep love of
+                        the craft grew into a career devoted to helping others look and feel their absolute best. I
+                        founded LushLocks &amp; Beauty because I believe every person deserves access to premium,
+                        medical-grade treatments in a warm, welcoming environment.
+                    </p>
+                    <p class="body-text" style="margin-bottom:16px;">
+                        I know how much confidence can affect every aspect of your life — and I've seen firsthand the
+                        transformation that happens when a client leaves feeling truly beautiful. Whether it's
+                        correcting a long-standing insecurity, restoring a youthful glow, or simply treating yourself to
+                        some well-deserved self-care, I'm here for all of it.
+                    </p>
+                    <p class="body-text" style="margin-bottom:32px;">
+                        I work exclusively from my studio inside Everyone Active in Romford, where I offer a calm,
+                        private, and professional environment. I pride myself on creating a genuinely personal
+                        experience — because your face, your skin, and your confidence are unique to you.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num" data-target="500" data-suffix="+">500+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-target="100" data-suffix="%">100%</span>
+                            <span class="stat-label">Recommended</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-target="15" data-suffix="+">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+
+                    <a href="contact.html#book" class="btn btn-primary">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Book with Lynda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section class="section" style="background:#fff;">
+        <div class="container">
+            <div class="section-header center text-center reveal">
+                <p class="eyebrow">Qualifications &amp; Certifications</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <h2 class="subheadline">Trained, Certified &amp;<br /><em>Fully Insured</em></h2>
+                <p class="body-text" style="max-width:560px;margin:16px auto 0;">Your safety is paramount. I hold all
+                    the required qualifications and insurance to perform every treatment offered at LushLocks &amp;
+                    Beauty.</p>
+            </div>
+
+            <div class="credentials-grid reveal">
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h4>Advanced Aesthetics Practitioner</h4>
+                        <p>Certified in anti-wrinkle injections, dermal fillers, and skin boosters. Qualified to Level 7
+                            standards.</p>
+                    </div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <h4>Fully Insured &amp; Regulated</h4>
+                        <p>Comprehensive professional indemnity and public liability insurance. All treatments operate
+                            within UK regulations.</p>
+                    </div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-flask"></i></div>
+                    <div>
+                        <h4>Medical-Grade Product Certified</h4>
+                        <p>Trained in the administration of FDA-approved, medical-grade skin boosters including PDRN and
+                            INFINI formulations.</p>
+                    </div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-dna"></i></div>
+                    <div>
+                        <h4>PRP Therapy Trained</h4>
+                        <p>Certified in Platelet-Rich Plasma (PRP) therapy for both skin and hair restoration
+                            treatments.</p>
+                    </div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-spa"></i></div>
+                    <div>
+                        <h4>Beauty Therapy Level 3 &amp; Above</h4>
+                        <p>Holds advanced qualifications in skincare, facials, massage, and holistic beauty therapies.
+                        </p>
+                    </div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon"><i class="fa-solid fa-heart"></i></div>
+                    <div>
+                        <h4>Sustained CPD Training</h4>
+                        <p>Continuously updating skills and knowledge through industry continuing professional
+                            development — always at the forefront of aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section" style="background:var(--dark-soft);">
+        <div class="container">
+            <div class="section-header center text-center reveal">
+                <p class="eyebrow" style="color:var(--gold);">What I Stand For</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <h2 class="subheadline" style="color:#fff;">My Values &amp; <em style="color:var(--gold-light)">Promise
+                        to You</em></h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Confidence First</h3>
+                    <p>Every decision I make is guided by one question: will this make my client feel more confident?
+                        Results matter, but so does how you feel throughout the process.</p>
+                </div>
+                <div class="value-card reveal reveal-delay-1">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Safety Always</h3>
+                    <p>I use only the highest-quality, medical-grade products and follow strict protocols. I will never
+                        compromise your safety for a result.</p>
+                </div>
+                <div class="value-card reveal reveal-delay-2">
+                    <i class="fa-solid fa-user"></i>
+                    <h3>Personalised Care</h3>
+                    <p>No two clients are the same. I take the time to understand your unique skin, goals, and concerns
+                        before recommending any treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED REVIEW -->
+    <section class="section" style="background:var(--cream);">
+        <div class="container-narrow text-center">
+            <div class="reveal">
+                <p class="eyebrow">Client Love</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <div style="font-size:3rem;color:var(--gold);margin-bottom:24px;opacity:0.4;">"</div>
+                <p
+                    style="font-family:var(--font-serif);font-size:clamp(1.1rem,2vw,1.35rem);font-style:italic;color:var(--text);line-height:1.9;max-width:680px;margin:0 auto 32px;">
+                    I honestly can't recommend Lynda enough — she's absolutely lovely and makes you feel so welcome.
+                    She's amazing at what she does and if you're lacking confidence like I was, she will deffo help you
+                    get it back. She will do everything she can to make sure you get the results you want.
+                </p>
+                <div class="review-author" style="justify-content:center;">
+                    <div class="review-avatar">J</div>
+                    <div class="review-author-info">
+                        <h5>Jodes Egan</h5>
+                        <span>Verified Client · ★★★★★</span>
+                    </div>
+                </div>
+                <div style="margin-top:44px;">
+                    <a href="contact.html#book" class="btn btn-primary">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Book Your Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo" style="margin-bottom:16px;">
+                        <img src="assets/images/logo.png" alt="LushLocks Logo"
+                            style="width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;"
+                            onerror="this.style.display='none'" />
+                        <div class="nav-logo-text">
+                            <span class="nav-logo-name">LushLocks</span>
+                            <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+                        </div>
+                    </a>
+                    <p>Premium beauty and advanced aesthetics by Lynda. Serving Romford, Essex and surrounding areas.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank"
+                            class="footer-social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/447538312192" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="treatments.html">Treatments</a></li>
+                        <li><a href="about.html">About Lynda</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="policy.html">Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul class="footer-links">
+                        <li><a href="treatments.html#skinbooster">Skin Boosters</a></li>
+                        <li><a href="treatments.html#microneedling">Microneedling</a></li>
+                        <li><a href="treatments.html#antiwrinkle">Anti-Wrinkle</a></li>
+                        <li><a href="treatments.html#hairprp">Hair PRP</a></li>
+                        <li><a href="treatments.html#dermaplaning">Dermaplaning</a></li>
+                        <li><a href="treatments.html#massage">Massage &amp; Facials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:07538312192">07538
+                                312192</a></li>
+                        <li class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a
+                                href="https://wa.me/447538312192" target="_blank">WhatsApp</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a
+                                href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Everyone Active,
+                                Gooshays Drive, Romford</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 LushLocks &amp; Beauty by Lynda. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="policy.html#privacy">Privacy Policy</a>
+                    <a href="policy.html#cancellation">Cancellation Policy</a>
+                    <a href="policy.html#terms">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <span class="whatsapp-float-label">Chat with Lynda</span>
+        <a href="https://wa.me/447538312192" target="_blank" class="whatsapp-float-btn"><i
+                class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

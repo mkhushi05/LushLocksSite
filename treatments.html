@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Explore all treatments at LushLocks & Beauty — Skin Boosters, Microneedling, Anti-Wrinkle, Lip Fillers, Hair PRP, Dermaplaning, Massages and more. Romford, Essex." />
+    <title>Treatments | LushLocks & Beauty — Advanced Aesthetics</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .treatments-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 52px;
+        }
+
+        .filter-btn {
+            padding: 10px 22px;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border: 1.5px solid var(--border);
+            border-radius: 100px;
+            background: transparent;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .price-table tr {
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.2s;
+        }
+
+        .price-table tr:hover {
+            background: rgba(201, 169, 110, 0.04);
+        }
+
+        .price-table td {
+            padding: 14px 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .price-table td:last-child {
+            text-align: right;
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        .promo-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/images/logo.png" alt="LushLocks Logo" onerror="this.style.display='none'" />
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">LushLocks</span>
+                <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="treatments.html" class="active">Treatments</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="policy.html">Policies</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="tel:07538312192" class="nav-icon-btn" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/447538312192" target="_blank" rel="noopener" class="nav-icon-btn whatsapp"><i
+                    class="fa-brands fa-whatsapp"></i></a>
+            <a href="contact.html#book" class="nav-book-btn">Book Now</a>
+        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-close"><i class="fa-solid fa-xmark"></i></button>
+        <a href="index.html">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="policy.html">Policies</a>
+        <div class="mobile-nav-actions">
+            <a href="tel:07538312192" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/447538312192" target="_blank" class="btn btn-primary"><i
+                    class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image:url('assets/images/treatments-hero.png');"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Treatments</span>
+            </div>
+            <h1 class="headline">Our Treatments</h1>
+            <p class="lead" style="color:rgba(255,255,255,0.75);max-width:560px;">Advanced aesthetics and luxury beauty
+                treatments, individually tailored to reveal your most radiant self.</p>
+        </div>
+    </section>
+
+    <!-- INTRO + OVERVIEW -->
+    <section class="section" style="background:var(--cream);padding-bottom:0;">
+        <div class="container">
+            <div class="section-header center text-center reveal">
+                <p class="eyebrow">Expertly Delivered</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <h2 class="headline">Results That Speak<br /><em>For Themselves</em></h2>
+                <p class="lead">Every treatment at LushLocks &amp; Beauty is performed by Lynda — a specialist with 15+
+                    years of experience using only medical-grade, FDA-approved products. Your safety, comfort, and
+                    results are always the priority.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AESTHETICS -->
+    <section class="section" style="background:var(--cream);" id="skinbooster">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Advanced Aesthetics</p>
+                <div class="gold-divider"><span>✦</span></div>
+                <h2 class="subheadline">Skin &amp; Facial Aesthetics</h2>
+            </div>
+
+            <div class="treatments-detail-grid">
+
+                <!-- Skin Boosters -->
+                <div class="treatment-detail-card reveal">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Signature Treatment</p>
+                        <h3>Premium Skin Boosters + PDRN</h3>
+                        <p class="body-text">
+                            Our ultimate skin rejuvenation combines two premium High-Grade Skin Boosters mixed with a
+                            high concentration of Polynucleotides (PDRN) — delivering deep hydration, collagen
+                            stimulation, and skin repair. Ideal for all skin types at any age.
+                        </p>
+                        <ul class="signature-list" style="margin-bottom:20px;">
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Deep
+                                cellular hydration
+                            </li>
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Collagen
+                                stimulation &amp; firming
+                            </li>
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Visible
+                                glow from first session
+                            </li>
+                        </ul>
+                        <table class="price-table">
+                            <tr>
+                                <td>Single Session</td>
+                                <td>£100 <span class="promo-pill">Was £200</span></td>
+                            </tr>
+                            <tr>
+                                <td>Course of 3 Sessions</td>
+                                <td>£280</td>
+                            </tr>
+                            <tr>
+                                <td>Microneedling + Skin Booster</td>
+                                <td>£100</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 45–60 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Results from 1st
+                                session</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anti-Wrinkle -->
+                <div class="treatment-detail-card reveal reveal-delay-1" id="antiwrinkle">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Injectables</p>
+                        <h3>Anti-Wrinkle Treatment</h3>
+                        <p class="body-text">
+                            Expertly administered anti-wrinkle injections to soften expression lines, smooth forehead
+                            creases, and restore a refreshed, youthful appearance — all without the frozen look. Lynda
+                            always aims for natural, beautiful results.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>1 Area</td>
+                                <td>£130</td>
+                            </tr>
+                            <tr>
+                                <td>2 Areas</td>
+                                <td>£150</td>
+                            </tr>
+                            <tr>
+                                <td>3 Areas</td>
+                                <td>£160</td>
+                            </tr>
+                            <tr>
+                                <td>3 Areas + Skin Booster</td>
+                                <td>£150 <span class="promo-pill">Offer</span></td>
+                            </tr>
+                            <tr>
+                                <td>3 Areas + 1ml Filler</td>
+                                <td>£170</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 30 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Full results in 2
+                                weeks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lip Filler -->
+                <div class="treatment-detail-card reveal" id="fillers">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-heart"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Injectables</p>
+                        <h3>Lip Filler</h3>
+                        <p class="body-text">
+                            Beautifully sculpted lips using premium dermal filler — whether you want subtle definition,
+                            added volume, or a more defined cupid's bow, Lynda will create a natural, beautiful result
+                            tailored perfectly to your face.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>0.5ml Lip Filler (Subtle)</td>
+                                <td>£110</td>
+                            </tr>
+                            <tr>
+                                <td>1ml Lip Filler</td>
+                                <td>£140 <span class="promo-pill">Special Offer</span></td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 45 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Immediate results
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Microneedling -->
+                <div class="treatment-detail-card reveal reveal-delay-1" id="microneedling">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-syringe"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Skin Therapy</p>
+                        <h3>Microneedling</h3>
+                        <p class="body-text">
+                            Microneedling (collagen induction therapy) uses tiny needles to trigger natural collagen
+                            production — improving skin texture, reducing scarring, shrinking pores, and leaving your
+                            skin firmer and visibly refreshed.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>Microneedling Session</td>
+                                <td>£85</td>
+                            </tr>
+                            <tr>
+                                <td>Microneedling + Skin Booster</td>
+                                <td>£100</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 60 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> 3–6 sessions
+                                recommended</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HAIR & BODY -->
+    <section class="section" style="background:#fff;" id="hairprp">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Hair &amp; Scalp</p>
+                <div class="gold-divider"><span>✦</span></div>
+                <h2 class="subheadline">Hair Restoration</h2>
+            </div>
+
+            <div class="treatments-detail-grid">
+                <div class="treatment-detail-card reveal">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-dna"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Hair PRP</p>
+                        <h3>Platelet-Rich Plasma Therapy</h3>
+                        <p class="body-text">
+                            Hair PRP (Platelet-Rich Plasma) is a cutting-edge, natural treatment that uses your own
+                            blood's growth factors to stimulate dormant hair follicles — reducing thinning and promoting
+                            noticeable regrowth. Safe, effective, and non-surgical.
+                        </p>
+                        <ul style="list-style:none;margin-bottom:20px;">
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Reduces
+                                hair thinning &amp; loss
+                            </li>
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Stimulates
+                                natural regrowth
+                            </li>
+                            <li
+                                style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--text-light);margin-bottom:6px;">
+                                <i class="fa-solid fa-check" style="color:var(--gold);font-size:0.75rem;"></i>Using your
+                                own platelets — no foreign substances
+                            </li>
+                        </ul>
+                        <table class="price-table">
+                            <tr>
+                                <td>Hair PRP Session</td>
+                                <td>£70</td>
+                            </tr>
+                            <tr>
+                                <td>Course of 3 Sessions</td>
+                                <td>£195</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 60–90 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> 3–6 sessions for best
+                                results</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="treatment-detail-card reveal reveal-delay-1"
+                    style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:48px 40px;background:linear-gradient(135deg,var(--champagne),var(--cream));">
+                    <div style="font-size:3rem;color:var(--gold);margin-bottom:20px;opacity:0.6;">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 style="margin-bottom:12px;">Not Sure Which Treatment?</h3>
+                    <p class="body-text" style="margin-bottom:28px;">Book a free, no-obligation consultation with Lynda.
+                        She'll assess your skin and goals to recommend the perfect treatment plan for you.</p>
+                    <a href="contact.html#book" class="btn btn-primary">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Book Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEAUTY TREATMENTS -->
+    <section class="section" style="background:var(--cream);" id="dermaplaning">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Beauty &amp; Relaxation</p>
+                <div class="gold-divider"><span>✦</span></div>
+                <h2 class="subheadline">Facials, Dermaplaning &amp; Massage</h2>
+            </div>
+
+            <div class="treatments-detail-grid">
+
+                <!-- Dermaplaning -->
+                <div class="treatment-detail-card reveal">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-feather"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Skin Treatment</p>
+                        <h3>Dermaplaning</h3>
+                        <p class="body-text">
+                            A gentle exfoliation technique that removes the top layer of dead skin cells and vellus hair
+                            (peach fuzz), revealing an incredibly smooth, luminous complexion. Perfect before special
+                            occasions or as a regular skin treatment.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>Mini Facial + Dermaplaning</td>
+                                <td>£25</td>
+                            </tr>
+                            <tr>
+                                <td>Full Facial + Dermaplaning</td>
+                                <td>£45</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 45–60 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> No downtime</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facials -->
+                <div class="treatment-detail-card reveal reveal-delay-1">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-spa"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Luxury Facial</p>
+                        <h3>Full Luxury Facial</h3>
+                        <p class="body-text">
+                            A deeply nourishing, customised facial using premium skincare products. Includes cleansing,
+                            exfoliation, extractions (if needed), treatment masque, and hydration. Tailored to your
+                            skin's needs every session.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>Full Facial</td>
+                                <td>£35</td>
+                            </tr>
+                            <tr>
+                                <td>HydraFacial</td>
+                                <td>£55</td>
+                            </tr>
+                            <tr>
+                                <td>Chemical Peel</td>
+                                <td>£45</td>
+                            </tr>
+                            <tr>
+                                <td>Collagen Boost Facial</td>
+                                <td>£50</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 60–75 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Monthly recommended
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Massage -->
+                <div class="treatment-detail-card reveal" id="massage">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-hands"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Relaxation</p>
+                        <h3>Massage Treatments</h3>
+                        <p class="body-text">
+                            Melt away stress and tension with a deeply restorative massage. Our hot stone massage
+                            combines the healing power of warm basalt stones with expert technique to relieve muscle
+                            tension and promote total body relaxation.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>Hot Stone Massage &amp; Facial</td>
+                                <td>£40</td>
+                            </tr>
+                            <tr>
+                                <td>Back, Neck &amp; Shoulder Massage</td>
+                                <td>£30</td>
+                            </tr>
+                            <tr>
+                                <td>Full Body Massage</td>
+                                <td>£45</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 45–60 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Totally relaxing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jelly Masks -->
+                <div class="treatment-detail-card reveal reveal-delay-1">
+                    <div class="tdc-image-placeholder"><i class="fa-solid fa-star"></i></div>
+                    <div class="tdc-body">
+                        <p class="eyebrow">Luxury Add-On</p>
+                        <h3>Jelly Masque &amp; Collagen Boost</h3>
+                        <p class="body-text">
+                            Indulge in our luxurious jelly mask treatments, packed with active ingredients designed to
+                            plump, hydrate, and radiate. A perfect add-on to any facial or standalone express treatment.
+                        </p>
+                        <table class="price-table">
+                            <tr>
+                                <td>Jelly Mask Treatment</td>
+                                <td>£20</td>
+                            </tr>
+                            <tr>
+                                <td>Collagen Boost Treatment</td>
+                                <td>£35</td>
+                            </tr>
+                        </table>
+                        <div class="tdc-meta" style="margin-top:20px;">
+                            <div class="tdc-meta-item"><i class="fa-regular fa-clock"></i> 30 min</div>
+                            <div class="tdc-meta-item"><i class="fa-solid fa-calendar-check"></i> Instant glow</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow" style="color:var(--gold);">Take the First Step</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <h2 class="headline" style="color:#fff;">Ready for Your<br /><em
+                        style="color:var(--gold-light);">Transformation?</em></h2>
+                <p style="color:rgba(255,255,255,0.7);margin-bottom:44px;max-width:520px;margin:0 auto 44px;">All
+                    treatments are by appointment. Book your consultation today and let Lynda create a personalised plan
+                    just for you.</p>
+                <div class="cta-banner-actions">
+                    <a href="contact.html#book" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i>
+                        Book Appointment</a>
+                    <a href="https://wa.me/447538312192" target="_blank" rel="noopener" class="btn btn-ghost"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp Lynda</a>
+                    <a href="tel:07538312192" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> 07538 312192</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo" style="margin-bottom:16px;">
+                        <img src="assets/images/logo.png" alt="LushLocks Logo"
+                            style="width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;"
+                            onerror="this.style.display='none'" />
+                        <div class="nav-logo-text">
+                            <span class="nav-logo-name">LushLocks</span>
+                            <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+                        </div>
+                    </a>
+                    <p>Premium beauty and advanced aesthetics by Lynda. Serving Romford, Essex and surrounding areas.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank"
+                            class="footer-social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/447538312192" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="treatments.html">Treatments</a></li>
+                        <li><a href="about.html">About Lynda</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="policy.html">Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul class="footer-links">
+                        <li><a href="#skinbooster">Skin Boosters</a></li>
+                        <li><a href="#microneedling">Microneedling</a></li>
+                        <li><a href="#antiwrinkle">Anti-Wrinkle</a></li>
+                        <li><a href="#fillers">Lip Fillers</a></li>
+                        <li><a href="#hairprp">Hair PRP</a></li>
+                        <li><a href="#dermaplaning">Dermaplaning</a></li>
+                        <li><a href="#massage">Massage &amp; Facials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:07538312192">07538
+                                312192</a></li>
+                        <li class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a
+                                href="https://wa.me/447538312192" target="_blank">WhatsApp</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a
+                                href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Everyone Active,
+                                Gooshays Drive, Romford</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 LushLocks &amp; Beauty by Lynda. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="policy.html#privacy">Privacy Policy</a>
+                    <a href="policy.html#cancellation">Cancellation Policy</a>
+                    <a href="policy.html#terms">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <span class="whatsapp-float-label">Chat with Lynda</span>
+        <a href="https://wa.me/447538312192" target="_blank" class="whatsapp-float-btn"><i
+                class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

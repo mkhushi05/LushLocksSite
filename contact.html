@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact LushLocks & Beauty — Book your appointment with Lynda. Call, WhatsApp, or fill in our contact form. Located in Romford, Essex." />
+    <title>Contact &amp; Book | LushLocks & Beauty — Advanced Aesthetics</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.88rem;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            color: var(--text-light);
+        }
+
+        .hours-time {
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        .hours-time.closed {
+            color: var(--muted);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .quick-contact-bar {
+            background: var(--dark);
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quick-bar-inner {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 28px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg);
+            color: #fff;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .quick-action:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .quick-action i {
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+
+        .quick-action .qa-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .quick-action .qa-value {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+        }
+
+        .quick-action.whatsapp-action:hover {
+            border-color: #25D366;
+        }
+
+        .quick-action.whatsapp-action:hover i {
+            color: #25D366;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="nav-logo">
+            <img src="assets/images/logo.png" alt="LushLocks Logo" onerror="this.style.display='none'" />
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">LushLocks</span>
+                <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="policy.html">Policies</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="tel:07538312192" class="nav-icon-btn"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/447538312192" target="_blank" rel="noopener" class="nav-icon-btn whatsapp"><i
+                    class="fa-brands fa-whatsapp"></i></a>
+            <a href="#book" class="nav-book-btn">Book Now</a>
+        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <div class="mobile-nav">
+        <button class="mobile-nav-close"><i class="fa-solid fa-xmark"></i></button>
+        <a href="index.html">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="policy.html">Policies</a>
+        <div class="mobile-nav-actions">
+            <a href="tel:07538312192" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/447538312192" target="_blank" class="btn btn-primary"><i
+                    class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image:url('assets/images/hero-bg.png');"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Contact</span>
+            </div>
+            <h1 class="headline">Get in Touch</h1>
+            <p class="lead" style="color:rgba(255,255,255,0.75);max-width:500px;">We'd love to hear from you. Book an
+                appointment, ask a question, or simply say hello.</p>
+        </div>
+    </section>
+
+    <!-- QUICK CONTACT BAR -->
+    <div class="quick-contact-bar">
+        <div class="container">
+            <div class="quick-bar-inner">
+                <a href="tel:07538312192" class="quick-action">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <div class="qa-label">Call Us</div>
+                        <div class="qa-value">07538 312192</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/447538312192" target="_blank" rel="noopener"
+                    class="quick-action whatsapp-action">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <div class="qa-label">WhatsApp</div>
+                        <div class="qa-value">Message Lynda</div>
+                    </div>
+                </a>
+                <a href="mailto:lyndasmithred3@gmail.com" class="quick-action">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <div class="qa-label">Email Us</div>
+                        <div class="qa-value">lyndasmithred3@gmail.com</div>
+                    </div>
+                </a>
+                <a href="https://maps.google.com/?q=Everyone+Active+Gooshays+Drive+Romford" target="_blank"
+                    rel="noopener" class="quick-action">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <div class="qa-label">Find Us</div>
+                        <div class="qa-value">Everyone Active, Romford</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT + BOOKING SECTION -->
+    <section class="section" style="background:var(--cream);" id="book">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Info Side -->
+                <div class="reveal">
+                    <p class="eyebrow">Contact Information</p>
+                    <div class="gold-divider"><span>✦</span></div>
+                    <h2 class="subheadline" style="margin-bottom:24px;">We're Here<br /><em>For You</em></h2>
+
+                    <p class="body-text" style="margin-bottom:36px;">
+                        All appointments at LushLocks &amp; Beauty are by prior booking only. The quickest ways to get
+                        in touch are by phone or WhatsApp. Alternatively, fill in the form and Lynda will get back to
+                        you as soon as possible.
+                    </p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <div class="label">Phone</div>
+                                <div class="value"><a href="tel:07538312192">07538 312192</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrap"
+                                style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.3);color:#25D366;">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="label">WhatsApp</div>
+                                <div class="value"><a href="https://wa.me/447538312192" target="_blank"
+                                        rel="noopener">+44 7538 312192 — Message Lynda directly</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div class="label">Email</div>
+                                <div class="value"><a
+                                        href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <div class="label">Location</div>
+                                <div class="value">Inside Everyone Active<br />Gooshays Drive, Harold Hill<br />Romford,
+                                    Essex, RM3</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrap"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <div class="label">Availability</div>
+                                <div class="value">By appointment only — please call or message to arrange.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <h4
+                        style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;margin-top:36px;">
+                        Clinic Hours (Approx)</h4>
+                    <div>
+                        <div class="hours-row"><span class="hours-day">Monday – Friday</span><span
+                                class="hours-time">9:00am – 6:00pm</span></div>
+                        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00am –
+                                4:00pm</span></div>
+                        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time closed">By
+                                arrangement</span></div>
+                    </div>
+
+                    <div class="map-wrap">
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <p><strong>LushLocks &amp; Beauty</strong><br />Inside Everyone Active, Gooshays
+                                Drive<br />Harold Hill, Romford, Essex RM3</p>
+                            <a href="https://maps.google.com/?q=Everyone+Active+Gooshays+Drive+Romford" target="_blank"
+                                rel="noopener">Open in Google Maps →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="reveal reveal-delay-2">
+                    <div class="contact-form-card">
+                        <p class="eyebrow">Book an Appointment</p>
+                        <div class="gold-divider"><span>✦</span></div>
+                        <h3 style="margin-bottom:32px;">Send Us a Message</h3>
+
+                        <form id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-control"
+                                        placeholder="Your first name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-control"
+                                        placeholder="Your last name" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="your@email.com" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control"
+                                    placeholder="Your phone number" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="treatment">Treatment of Interest</label>
+                                <select id="treatment" name="treatment" class="form-control">
+                                    <option value="">Select a treatment (optional)</option>
+                                    <optgroup label="Advanced Aesthetics">
+                                        <option>Premium Skin Boosters + PDRN</option>
+                                        <option>Microneedling</option>
+                                        <option>Anti-Wrinkle Treatment</option>
+                                        <option>Lip Filler</option>
+                                    </optgroup>
+                                    <optgroup label="Hair Treatments">
+                                        <option>Hair PRP</option>
+                                    </optgroup>
+                                    <optgroup label="Beauty &amp; Relaxation">
+                                        <option>Dermaplaning</option>
+                                        <option>Full Facial</option>
+                                        <option>Massage</option>
+                                        <option>HydraFacial</option>
+                                        <option>Chemical Peel</option>
+                                        <option>Collagen Boost</option>
+                                    </optgroup>
+                                    <option>General Enquiry / Consultation</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" class="form-control"
+                                    placeholder="Tell us a little about what you're looking for, any concerns, or preferred dates / times..."></textarea>
+                            </div>
+
+                            <div style="margin-bottom:24px;">
+                                <label
+                                    style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.82rem;color:var(--text-light);line-height:1.6;">
+                                    <input type="checkbox" id="consent" name="consent"
+                                        style="margin-top:2px;accent-color:var(--gold-dark);" required />
+                                    I agree to my personal information being used to respond to my enquiry, in
+                                    accordance with the <a href="policy.html#privacy"
+                                        style="color:var(--gold-dark);text-decoration:underline;">Privacy Policy</a>.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send Message
+                            </button>
+
+                            <p style="margin-top:18px;font-size:0.78rem;color:var(--muted);text-align:center;">
+                                Prefer to speak directly? <a href="https://wa.me/447538312192" target="_blank"
+                                    style="color:var(--gold-dark);font-weight:600;">WhatsApp Lynda</a> or call <a
+                                    href="tel:07538312192" style="color:var(--gold-dark);font-weight:600;">07538
+                                    312192</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL CTA -->
+    <section class="section-sm" style="background:var(--champagne);border-top:1px solid var(--border);">
+        <div class="container text-center">
+            <div class="reveal">
+                <p class="eyebrow">Stay Connected</p>
+                <h3 style="margin:12px 0;font-size:1.6rem;">Follow Our Journey</h3>
+                <p class="body-text" style="max-width:480px;margin:0 auto 28px;">See our latest results, offers, and
+                    transformations on Facebook and Instagram.</p>
+                <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank" rel="noopener"
+                        class="btn btn-primary">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook Page
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-outline">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo" style="margin-bottom:16px;">
+                        <img src="assets/images/logo.png" alt="LushLocks Logo"
+                            style="width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;"
+                            onerror="this.style.display='none'" />
+                        <div class="nav-logo-text">
+                            <span class="nav-logo-name">LushLocks</span>
+                            <span class="nav-logo-sub">Beauty &amp; Advanced Aesthetics</span>
+                        </div>
+                    </a>
+                    <p>Premium beauty and advanced aesthetics by Lynda. Serving Romford, Essex and surrounding areas.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank"
+                            class="footer-social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/447538312192" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-btn"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="treatments.html">Treatments</a></li>
+                        <li><a href="about.html">About Lynda</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="policy.html">Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul class="footer-links">
+                        <li><a href="treatments.html#skinbooster">Skin Boosters</a></li>
+                        <li><a href="treatments.html#microneedling">Microneedling</a></li>
+                        <li><a href="treatments.html#antiwrinkle">Anti-Wrinkle</a></li>
+                        <li><a href="treatments.html#hairprp">Hair PRP</a></li>
+                        <li><a href="treatments.html#dermaplaning">Dermaplaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:07538312192">07538
+                                312192</a></li>
+                        <li class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a
+                                href="https://wa.me/447538312192" target="_blank">WhatsApp</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a
+                                href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></li>
+                        <li class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Everyone Active,
+                                Gooshays Drive, Romford</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 LushLocks &amp; Beauty by Lynda. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="policy.html#privacy">Privacy Policy</a>
+                    <a href="policy.html#cancellation">Cancellation Policy</a>
+                    <a href="policy.html#terms">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <span class="whatsapp-float-label">Chat with Lynda</span>
+        <a href="https://wa.me/447538312192" target="_blank" class="whatsapp-float-btn"><i
+                class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
