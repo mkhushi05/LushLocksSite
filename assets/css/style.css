@@ -675,6 +675,59 @@ h5 {
   background: rgba(255, 255, 255, 0.12);
 }
 
+/* ─── Featured Pillars Section ────────────────────────────── */
+.featured-section {
+  background: var(--dark);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.featured-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 20px 32px;
+  flex: 1;
+}
+
+.featured-item i {
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.fi-label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  opacity: 0.8;
+}
+
+.fi-value {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.featured-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
 /* ─── About Section ───────────────────────────────────────── */
 .about-section {
   background: var(--cream);
@@ -1927,12 +1980,90 @@ textarea.form-control {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* Trust bar: 2×2 compact grid on mobile */
+  .trust-bar {
+    padding: 28px 0;
+  }
+
   .trust-bar-inner {
-    gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .trust-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .trust-item:nth-child(even) {
+    border-right: none;
+  }
+
+  /* Last item (5th — location) spans full row */
+  .trust-item:last-of-type {
+    grid-column: 1 / -1;
+    border-bottom: none;
+    border-right: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 12px 20px;
   }
 
   .trust-divider {
     display: none;
+  }
+
+  /* Featured pillars: 2-col grid on mobile.
+     DOM order: item(1) divider(2) item(3) divider(4) item(5) divider(6) item(7) divider(8) item(9)
+     !important needed because desktop display:flex was winning the cascade. */
+  .featured-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  .featured-divider {
+    display: none !important;
+  }
+
+  .featured-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 24px 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Items in the right column (positions 3 and 7 in DOM = 2nd and 4th items) */
+  .featured-item:nth-child(3),
+  .featured-item:nth-child(7) {
+    border-right: none;
+  }
+
+  /* Remove bottom border from 3rd row items (before last full-width row) */
+  .featured-item:nth-child(5),
+  .featured-item:nth-child(7) {
+    border-bottom: none;
+  }
+
+  /* Last item (5th — Environment, position 9 in DOM) spans full width */
+  .featured-item:nth-child(9) {
+    grid-column: 1 / -1;
+    border-bottom: none;
+    border-right: none;
+    flex-direction: row !important;
+    gap: 14px;
+    justify-content: center;
   }
 
   .footer-grid {

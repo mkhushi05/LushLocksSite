@@ -258,3 +258,39 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ── Bug Fixes ───────────────────────────────────────────── */
+
+/*
+ * HERO SPACING FIX
+ * The hero section sits behind the fixed navbar (70-80px tall).
+ * Using align-items: flex-end means content anchors at the bottom,
+ * but if the hero is too short the TOP of the content block lands
+ * right behind the navbar — causing the breadcrumb to overlap the nav.
+ *
+ * Fix: increase min-height to 580px so there's always ample vertical
+ * space, and add padding-top equal to the navbar height so the
+ * absolute-positioned background covers the nav area beautifully while
+ * the content box stays well below the navbar.
+ */
+.page-hero {
+    min-height: 580px;
+    padding-top: 85px;
+}
+
+/*
+ * FOOTER LOGO FIX
+ * The footer re-uses the .nav-logo class (image + text side by side).
+ * This makes it look like a second navbar. In the footer we only want
+ * the circular logo image — the clinic name is shown elsewhere in the
+ * footer text. Hiding the text keeps it clean and unambiguous.
+ */
+.footer-brand .nav-logo-text {
+    display: none;
+}
+
+/* Scale the footer logo image slightly larger since the text is gone */
+.footer-brand .nav-logo img {
+    width: 60px;
+    height: 60px;
+}
