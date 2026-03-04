@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Page Not Found | LushLocks & Beauty</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--cream);
+        }
+
+        .error-number {
+            font-family: var(--font-serif);
+            font-size: clamp(6rem, 20vw, 12rem);
+            color: var(--gold);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+
+        .error-content {
+            max-width: 540px;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="LushLocks & Beauty logo" width="52"
+                height="52" />
+            <div class="nav-logo-text"><span class="nav-logo-name">LushLocks</span><span class="nav-logo-sub">Beauty
+                    &amp; Advanced Aesthetics</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions"><a href="contact.html#book" class="nav-book-btn">Book Now</a></div>
+        <div class="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span>
+        </div>
+    </nav>
+    <div class="mobile-nav" aria-hidden="true"><button class="mobile-nav-close" aria-label="Close"><i
+                class="fa-solid fa-xmark"></i></button><a href="index.html">Home</a><a
+            href="treatments.html">Treatments</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        <div class="mobile-nav-actions"><a href="contact.html#book" class="btn btn-primary"><i
+                    class="fa-regular fa-calendar-check"></i> Book Now</a></div>
+    </div>
+
+    <main class="error-page">
+        <div class="error-content">
+            <div class="error-number">404</div>
+            <p class="eyebrow">Page Not Found</p>
+            <div class="gold-divider center"><span>✦</span></div>
+            <h1 style="font-size:2rem;margin-bottom:16px;">This page seems to have<br /><em>wandered off</em></h1>
+            <p class="body-text" style="max-width:400px;margin:0 auto;">Don't worry — it happens to the best of us. Let
+                us help you find what you're looking for.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house"></i> Back to Home</a>
+                <a href="treatments.html" class="btn btn-outline"><i class="fa-solid fa-sparkles"></i> View
+                    Treatments</a>
+                <a href="contact.html" class="btn btn-outline"><i class="fa-regular fa-calendar-check"></i> Book Now</a>
+            </div>
+            <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border-light);">
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;">Or reach Lynda directly:</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="tel:07538312192" style="color:var(--gold);font-size:0.85rem;"><i
+                            class="fa-solid fa-phone"></i> 07538 312192</a>
+                    <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer"
+                        style="color:var(--gold);font-size:0.85rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:lyndasmithred3@gmail.com" style="color:var(--gold);font-size:0.85rem;"><i
+                            class="fa-solid fa-envelope"></i> Email</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

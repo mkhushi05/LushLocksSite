@@ -1,3 +1,5 @@
+'use strict';
+
 /* ============================================================
    LUSHLOCKS & BEAUTY — Global JavaScript
    ============================================================ */
@@ -6,6 +8,7 @@
 const navbar = document.getElementById('navbar');
 
 function handleNavScroll() {
+  if (!navbar) return;
   if (window.scrollY > 60) {
     navbar.classList.add('scrolled');
     navbar.classList.remove('transparent');
@@ -23,41 +26,49 @@ const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileClose = document.querySelector('.mobile-nav-close');
 
-if (hamburger && mobileNav) {
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
+function openMobileNav() {
+  if (!mobileNav) return;
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
 
-if (mobileClose && mobileNav) {
-  mobileClose.addEventListener('click', () => {
-    mobileNav.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+function closeMobileNav() {
+  if (!mobileNav) return;
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 
-// Close mobile nav on link click
+if (hamburger) hamburger.addEventListener('click', openMobileNav);
+if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+
+// Close on link click or Escape key
 document.querySelectorAll('.mobile-nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileNav && mobileNav.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', closeMobileNav);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+    closeMobileNav();
+  }
 });
 
 // ─── Scroll Reveal ─────────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
 
-// ─── Hero Kenburn ─────────────────────────────────────────
+// ─── Hero Ken Burns effect ─────────────────────────────────
 const heroSection = document.querySelector('.hero');
 if (heroSection) {
   setTimeout(() => heroSection.classList.add('loaded'), 50);
@@ -89,20 +100,57 @@ if (policyNavBtns.length > 0) {
   });
 }
 
-// ─── Contact Form ──────────────────────────────────────────
+// ─── FAQ Accordion ─────────────────────────────────────────
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  if (!question || !answer) return;
+
+  question.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      openItem.classList.remove('open');
+      const a = openItem.querySelector('.faq-answer');
+      if (a) a.style.maxHeight = null;
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// ─── Contact Form — SECURITY: safe DOM manipulation, no innerHTML ──
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('.btn');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-check"></i> &nbsp;Message Sent!';
+
+    const btn = contactForm.querySelector('button[type="submit"]');
+    if (!btn) return;
+
+    const originalChildren = Array.from(btn.childNodes).map(n => n.cloneNode(true));
+
+    // Safe DOM creation — no innerHTML
+    btn.textContent = '';
+    const icon = document.createElement('i');
+    icon.className = 'fa-solid fa-check';
+    icon.setAttribute('aria-hidden', 'true');
+    const text = document.createTextNode('\u00a0 Message Sent!');
+    btn.appendChild(icon);
+    btn.appendChild(text);
     btn.style.background = 'linear-gradient(135deg, #2d8a4e, #3bb06a)';
     btn.disabled = true;
+    btn.setAttribute('aria-label', 'Message sent successfully');
+
     setTimeout(() => {
-      btn.innerHTML = originalText;
+      btn.textContent = '';
+      originalChildren.forEach(child => btn.appendChild(child));
       btn.style.background = '';
       btn.disabled = false;
+      btn.setAttribute('aria-label', 'Send Message');
       contactForm.reset();
     }, 4000);
   });
@@ -111,37 +159,64 @@ if (contactForm) {
 // ─── Smooth Scroll for Anchor Links ───────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+    const selector = anchor.getAttribute('href');
+    if (selector === '#') return;
+    try {
+      const target = document.querySelector(selector);
+      if (target) {
+        e.preventDefault();
+        const offset = 90;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    } catch (err) {
+      // Invalid selector — let browser handle
     }
   });
 });
 
 // ─── Counter Animation ─────────────────────────────────────
 function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  if (isNaN(target)) return;
   const duration = 1800;
   const step = target / (duration / 16);
   let current = 0;
+
   const update = () => {
     current = Math.min(current + step, target);
-    el.textContent = Math.floor(current) + (el.dataset.suffix || '');
+    // Safe text update
+    el.textContent = Math.floor(current) + suffix;
     if (current < target) requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
 }
 
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
+if ('IntersectionObserver' in window) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
 
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+}
+
+// ─── Cookie Notice ─────────────────────────────────────────
+(function initCookieNotice() {
+  if (localStorage.getItem('ll_cookie_accepted')) return;
+  const notice = document.getElementById('cookie-notice');
+  if (!notice) return;
+  notice.style.display = 'flex';
+  const acceptBtn = document.getElementById('cookie-accept');
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('ll_cookie_accepted', '1');
+      notice.style.display = 'none';
+    });
+  }
+})();
