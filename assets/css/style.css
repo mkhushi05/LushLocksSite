@@ -764,11 +764,6 @@ h5 {
   background-image: url('../images/inject-posee.jpg');
   background-size: cover;
   background-position: center;
-  transform: scale(1.06);
-  transition: transform 16s ease;
-}
-
-.hero.loaded .hero-bg {
   transform: scale(1);
 }
 

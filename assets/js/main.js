@@ -68,12 +68,6 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
 
-// ─── Hero Ken Burns effect ─────────────────────────────────
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-  setTimeout(() => heroSection.classList.add('loaded'), 50);
-}
-
 // ─── Active Nav Link ───────────────────────────────────────
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
