@@ -44,59 +44,120 @@
         }
 
         .quick-contact-bar {
-            background: var(--dark);
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border);
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
         }
 
         .quick-bar-inner {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
+            background: var(--dark);
+            border-radius: var(--radius-lg);
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(201, 169, 110, 0.2);
         }
 
         .quick-action {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 14px;
-            padding: 16px 28px;
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius-lg);
-            color: #fff;
-            transition: var(--transition);
+            justify-content: center;
+            text-align: center;
+            gap: 12px;
+            padding: 32px 20px;
             text-decoration: none;
+            border-right: 1px solid rgba(201, 169, 110, 0.15);
+            transition: background 0.3s ease;
+        }
+
+        .quick-action:last-child {
+            border-right: none;
         }
 
         .quick-action:hover {
-            border-color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-gold);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .quick-action i {
             font-size: 1.4rem;
             color: var(--gold);
+            transition: transform 0.3s ease;
         }
 
-        .quick-action .qa-label {
+        .quick-action:hover i {
+            transform: translateY(-3px);
+        }
+
+        .qa-label {
+            font-family: var(--font-sans);
             font-size: 0.65rem;
-            letter-spacing: 0.16em;
+            font-weight: 600;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--gold-dark);
+            margin-bottom: 4px;
         }
 
-        .quick-action .qa-value {
+        .qa-value {
             font-family: var(--font-serif);
-            font-size: 1rem;
+            font-size: 1.05rem;
+            color: var(--cream);
         }
 
-        .quick-action.whatsapp-action:hover {
-            border-color: #25D366;
+        .whatsapp-action i {
+            color: var(--gold);
         }
 
-        .quick-action.whatsapp-action:hover i {
+        .whatsapp-action:hover i {
             color: #25D366;
+        }
+
+        @media (max-width: 900px) {
+            .quick-bar-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-action:nth-child(1),
+            .quick-action:nth-child(2) {
+                border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+            }
+
+            .quick-action:nth-child(1),
+            .quick-action:nth-child(3) {
+                border-right: 1px solid rgba(201, 169, 110, 0.15);
+            }
+
+            .quick-action:nth-child(2),
+            .quick-action:nth-child(4) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .quick-contact-bar {
+                padding: 0 16px;
+                margin-top: -30px;
+            }
+
+            .quick-action {
+                padding: 24px 12px;
+                gap: 8px;
+            }
+
+            .quick-action i {
+                font-size: 1.2rem;
+            }
+
+            .qa-label {
+                font-size: 0.55rem;
+            }
+
+            .qa-value {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -167,8 +228,8 @@
 
     <!-- QUICK CONTACT BAR -->
     <div class="quick-contact-bar">
-        <div class="container">
-            <div class="quick-bar-inner">
+        <div class="container" style="max-width: 1000px;">
+            <div class="quick-bar-inner reveal">
                 <a href="tel:07538312192" class="quick-action">
                     <i class="fa-solid fa-phone"></i>
                     <div>
@@ -188,7 +249,7 @@
                     <i class="fa-solid fa-envelope"></i>
                     <div>
                         <div class="qa-label">Email Us</div>
-                        <div class="qa-value">lyndasmithred3@gmail.com</div>
+                        <div class="qa-value">lyndasmithred3</div>
                     </div>
                 </a>
                 <a href="https://maps.google.com/?q=Everyone+Active+Gooshays+Drive+Romford" target="_blank"
@@ -196,7 +257,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
                         <div class="qa-label">Find Us</div>
-                        <div class="qa-value">Everyone Active, Romford</div>
+                        <div class="qa-value">Romford</div>
                     </div>
                 </a>
             </div>
@@ -209,7 +270,7 @@
             <div class="contact-grid">
 
                 <!-- Info Side -->
-                <div class="reveal">
+                <div>
                     <p class="eyebrow">Contact Information</p>
                     <div class="gold-divider"><span>✦</span></div>
                     <h2 class="subheadline" style="margin-bottom:24px;">We're Here<br /><em>For You</em></h2>
@@ -289,7 +350,7 @@
                 </div>
 
                 <!-- Form Side -->
-                <div class="reveal reveal-delay-2">
+                <div>
                     <div class="contact-form-card">
                         <p class="eyebrow">Book an Appointment</p>
                         <div class="gold-divider"><span>✦</span></div>
