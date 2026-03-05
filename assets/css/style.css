@@ -415,7 +415,7 @@ h5 {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 1001;
   background: var(--dark);
   flex-direction: column;
   align-items: center;
@@ -432,7 +432,7 @@ h5 {
   pointer-events: all;
 }
 
-.mobile-nav a {
+.mobile-nav>a {
   font-family: var(--font-serif);
   font-size: 2.2rem;
   color: #fff;
@@ -440,7 +440,7 @@ h5 {
   transition: color 0.25s;
 }
 
-.mobile-nav a:hover {
+.mobile-nav>a:hover {
   color: var(--gold);
 }
 
@@ -448,17 +448,28 @@ h5 {
   position: absolute;
   top: 28px;
   right: 28px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
   cursor: pointer;
   background: none;
   border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 8px;
 }
 
 .mobile-nav-actions {
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 24px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.mobile-nav-actions .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 /* ─── Section Layout ───────────────────────────────────────── */
