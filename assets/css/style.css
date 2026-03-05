@@ -568,6 +568,145 @@ h5 {
   font-size: 0.8rem;
 }
 
+/* ─── Philosophy Section ───────────────────────────────────────── */
+.philosophy-section {
+  background-color: var(--dark);
+  color: #fff;
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.philosophy-content {
+  position: relative;
+  z-index: 2;
+  padding-right: 40px;
+}
+
+.philosophy-content .eyebrow {
+  color: var(--gold-light);
+  margin-bottom: 24px;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+}
+
+.philosophy-content h2 {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  line-height: 1.1;
+  font-weight: 300;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.philosophy-content h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.philosophy-text {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 480px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.philosophy-signature {
+  margin-top: 40px;
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.philosophy-image-wrap {
+  position: relative;
+  height: 750px;
+  width: 100%;
+}
+
+/* Elegant framing detail that doesn't fully close */
+.philosophy-image-wrap::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  bottom: 80px;
+  left: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-bottom: none;
+  border-left: none;
+  z-index: 1;
+}
+
+.philosophy-image-wrap::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  right: 24px;
+  bottom: -24px;
+  left: -24px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-top: none;
+  border-right: none;
+  z-index: 1;
+}
+
+.philosophy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+@media (max-width: 1024px) {
+  .philosophy-grid {
+    gap: 60px;
+  }
+
+  .philosophy-content h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-section {
+    padding: 100px 0;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .philosophy-image-wrap {
+    height: 550px;
+    order: -1;
+  }
+
+  .philosophy-content {
+    padding-right: 0;
+  }
+
+  .philosophy-content h2 {
+    font-size: 2.8rem;
+  }
+}
+
 /* ─── Section Layout ───────────────────────────────────────── */
 .section {
   padding: 100px 0;
