@@ -159,6 +159,152 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* ─── Concierge Form ─── */
+        .concierge-form-wrap {
+            background: #fff;
+            padding: 60px;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            box-shadow: 0 40px 80px rgba(43, 34, 24, 0.04);
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .concierge-form-wrap::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            pointer-events: none;
+        }
+
+        .concierge-form .form-group {
+            margin-bottom: 40px;
+        }
+
+        .concierge-form .form-group label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .concierge-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+            transition: var(--transition);
+            font-family: var(--font-serif);
+        }
+
+        .concierge-input:focus {
+            outline: none;
+            border-bottom-color: var(--gold);
+        }
+
+        .concierge-input::placeholder {
+            color: var(--muted);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        textarea.concierge-input {
+            resize: vertical;
+            min-height: 48px;
+            max-height: 300px;
+        }
+
+        select.concierge-input {
+            color: var(--dark);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A96E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+        }
+
+        .concierge-submit {
+            width: 100%;
+            padding: 20px;
+            background: var(--dark);
+            color: var(--gold);
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .concierge-submit:hover {
+            background: var(--gold-dark);
+            color: #fff;
+        }
+
+        .concierge-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(201, 169, 110, 0.2);
+        }
+
+        .concierge-info-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .concierge-info-label {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .concierge-info-value {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.6;
+            font-family: var(--font-sans);
+        }
+
+        .concierge-info-value a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .concierge-info-value a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .concierge-form-wrap {
+                padding: 40px 24px;
+            }
+        }
     </style>
 </head>
 
@@ -264,178 +410,131 @@
         </div>
     </div>
 
-    <!-- CONTACT + BOOKING SECTION -->
-    <section class="section" style="background:var(--cream);" id="book">
-        <div class="container">
-            <div class="contact-grid">
+    <!-- CONCIERGE BOOKING SECTION -->
+    <section class="section" style="background:#fdfaf5;" id="book">
+        <div class="container-narrow">
+            <div class="concierge-header text-center reveal">
+                <p class="eyebrow" style="color:var(--gold-dark);">The Concierge</p>
+                <div class="gold-divider center"><span>✦</span></div>
+                <h2 class="subheadline" style="margin-bottom:16px;">Request an<br /><em>Appointment</em></h2>
+                <p class="body-text"
+                    style="margin-bottom:48px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                    All appointments at LushLocks &amp; Beauty are by prior booking only. Please share your details
+                    below, and Lynda will personally respond to coordinate your visit.
+                </p>
+            </div>
 
-                <!-- Info Side -->
-                <div>
-                    <p class="eyebrow">Contact Information</p>
-                    <div class="gold-divider"><span>✦</span></div>
-                    <h2 class="subheadline" style="margin-bottom:24px;">We're Here<br /><em>For You</em></h2>
+            <div class="concierge-form-wrap reveal reveal-delay-1">
+                <form id="contactForm" class="concierge-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group" style="flex:1;">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" class="concierge-input"
+                                placeholder="Your first name" required />
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="concierge-input"
+                                placeholder="Your last name" required />
+                        </div>
+                    </div>
 
-                    <p class="body-text" style="margin-bottom:36px;">
-                        All appointments at LushLocks &amp; Beauty are by prior booking only. The quickest ways to get
-                        in touch are by phone or WhatsApp. Alternatively, fill in the form and Lynda will get back to
-                        you as soon as possible.
+                    <div class="form-row">
+                        <div class="form-group" style="flex:1;">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="concierge-input"
+                                placeholder="your@email.com" required />
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="concierge-input"
+                                placeholder="Your phone number" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="treatment">Treatment of Interest</label>
+                        <select id="treatment" name="treatment" class="concierge-input">
+                            <option value="">Select a treatment (optional)</option>
+                            <optgroup label="Advanced Aesthetics">
+                                <option>Premium Skin Boosters + PDRN</option>
+                                <option>Microneedling</option>
+                                <option>Anti-Wrinkle Treatment</option>
+                                <option>Lip Filler</option>
+                            </optgroup>
+                            <optgroup label="Hair Treatments">
+                                <option>Hair PRP</option>
+                            </optgroup>
+                            <optgroup label="Beauty &amp; Relaxation">
+                                <option>Dermaplaning</option>
+                                <option>Full Facial</option>
+                                <option>Massage</option>
+                                <option>HydraFacial</option>
+                                <option>Chemical Peel</option>
+                                <option>Collagen Boost</option>
+                            </optgroup>
+                            <option>General Enquiry / Consultation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" class="concierge-input"
+                            placeholder="Tell us a little about what you're looking for, any concerns, or preferred dates / times..."
+                            rows="1"></textarea>
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <label
+                            style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.75rem;color:var(--text-light);line-height:1.6;font-family:var(--font-sans);text-transform:none;letter-spacing:normal;">
+                            <input type="checkbox" id="consent" name="consent"
+                                style="margin-top:2px;accent-color:var(--gold-dark);" required />
+                            <span>I agree to my personal information being used to respond to my enquiry, in accordance
+                                with
+                                the <a href="policy.html#privacy"
+                                    style="color:var(--gold-dark);text-decoration:underline;white-space:nowrap;">Privacy
+                                    Policy</a>.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="concierge-submit">
+                        <i class="fa-solid fa-paper-plane" style="font-size: 1.1rem; opacity: 0.8;"></i>
+                        Send Inquiry
+                    </button>
+
+                    <p
+                        style="margin-top:24px;font-size:0.75rem;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:0.1em;">
+                        Or message directly via <a href="https://wa.me/447538312192" target="_blank"
+                            style="color:var(--gold-dark);font-weight:700;text-decoration:none;">WhatsApp</a>
                     </p>
+                </form>
+            </div>
 
-                    <div class="contact-info-list">
-                        <div class="contact-info-item">
-                            <div class="contact-icon-wrap"><i class="fa-solid fa-phone"></i></div>
-                            <div>
-                                <div class="label">Phone</div>
-                                <div class="value"><a href="tel:07538312192">07538 312192</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-wrap"
-                                style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.3);color:#25D366;">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <div class="label">WhatsApp</div>
-                                <div class="value"><a href="https://wa.me/447538312192" target="_blank"
-                                        rel="noopener">+44 7538 312192 — Message Lynda directly</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
-                            <div>
-                                <div class="label">Email</div>
-                                <div class="value"><a
-                                        href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></div>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <div class="label">Location</div>
-                                <div class="value">Inside Everyone Active<br />Gooshays Drive, Harold Hill<br />Romford,
-                                    Essex, RM3</div>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-wrap"><i class="fa-solid fa-clock"></i></div>
-                            <div>
-                                <div class="label">Availability</div>
-                                <div class="value">By appointment only — please call or message to arrange.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Hours -->
-                    <h4
-                        style="font-family:var(--font-sans);font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;margin-top:36px;">
-                        Clinic Hours (Approx)</h4>
-                    <div>
-                        <div class="hours-row"><span class="hours-day">Monday – Friday</span><span
-                                class="hours-time">9:00am – 6:00pm</span></div>
-                        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00am –
-                                4:00pm</span></div>
-                        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time closed">By
-                                arrangement</span></div>
-                    </div>
-
-                    <div class="map-wrap">
-                        <div class="map-placeholder">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                            <p><strong>LushLocks &amp; Beauty</strong><br />Inside Everyone Active, Gooshays
-                                Drive<br />Harold Hill, Romford, Essex RM3</p>
-                            <a href="https://maps.google.com/?q=Everyone+Active+Gooshays+Drive+Romford" target="_blank"
-                                rel="noopener">Open in Google Maps →</a>
-                        </div>
+            <div class="concierge-footer reveal reveal-delay-2">
+                <div class="concierge-info-item">
+                    <div class="concierge-info-label">Direct Contact</div>
+                    <div class="concierge-info-value">
+                        <a href="tel:07538312192">07538 312192</a><br />
+                        <a href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a>
                     </div>
                 </div>
-
-                <!-- Form Side -->
-                <div>
-                    <div class="contact-form-card">
-                        <p class="eyebrow">Book an Appointment</p>
-                        <div class="gold-divider"><span>✦</span></div>
-                        <h3 style="margin-bottom:32px;">Send Us a Message</h3>
-
-                        <form id="contactForm" novalidate>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" class="form-control"
-                                        placeholder="Your first name" required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" class="form-control"
-                                        placeholder="Your last name" required />
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" class="form-control"
-                                    placeholder="your@email.com" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-control"
-                                    placeholder="Your phone number" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="treatment">Treatment of Interest</label>
-                                <select id="treatment" name="treatment" class="form-control">
-                                    <option value="">Select a treatment (optional)</option>
-                                    <optgroup label="Advanced Aesthetics">
-                                        <option>Premium Skin Boosters + PDRN</option>
-                                        <option>Microneedling</option>
-                                        <option>Anti-Wrinkle Treatment</option>
-                                        <option>Lip Filler</option>
-                                    </optgroup>
-                                    <optgroup label="Hair Treatments">
-                                        <option>Hair PRP</option>
-                                    </optgroup>
-                                    <optgroup label="Beauty &amp; Relaxation">
-                                        <option>Dermaplaning</option>
-                                        <option>Full Facial</option>
-                                        <option>Massage</option>
-                                        <option>HydraFacial</option>
-                                        <option>Chemical Peel</option>
-                                        <option>Collagen Boost</option>
-                                    </optgroup>
-                                    <option>General Enquiry / Consultation</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" class="form-control"
-                                    placeholder="Tell us a little about what you're looking for, any concerns, or preferred dates / times..."></textarea>
-                            </div>
-
-                            <div style="margin-bottom:24px;">
-                                <label
-                                    style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.82rem;color:var(--text-light);line-height:1.6;">
-                                    <input type="checkbox" id="consent" name="consent"
-                                        style="margin-top:2px;accent-color:var(--gold-dark);" required />
-                                    I agree to my personal information being used to respond to my enquiry, in
-                                    accordance with the <a href="policy.html#privacy"
-                                        style="color:var(--gold-dark);text-decoration:underline;">Privacy Policy</a>.
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                Send Message
-                            </button>
-
-                            <p style="margin-top:18px;font-size:0.78rem;color:var(--muted);text-align:center;">
-                                Prefer to speak directly? <a href="https://wa.me/447538312192" target="_blank"
-                                    style="color:var(--gold-dark);font-weight:600;">WhatsApp Lynda</a> or call <a
-                                    href="tel:07538312192" style="color:var(--gold-dark);font-weight:600;">07538
-                                    312192</a>
-                            </p>
-                        </form>
+                <div class="concierge-info-item">
+                    <div class="concierge-info-label">Clinic Location</div>
+                    <div class="concierge-info-value">
+                        Inside Everyone Active<br />
+                        Gooshays Drive, Harold Hill<br />
+                        Romford, Essex, RM3
+                    </div>
+                </div>
+                <div class="concierge-info-item">
+                    <div class="concierge-info-label">Operating Hours</div>
+                    <div class="concierge-info-value" style="display:flex; flex-direction:column; gap:4px;">
+                        <div style="display:flex;justify-content:space-between;"><span>Mon – Fri:</span> <span>9am –
+                                6pm</span></div>
+                        <div style="display:flex;justify-content:space-between;"><span>Saturday:</span> <span>9am –
+                                4pm</span></div>
+                        <div style="display:flex;justify-content:space-between;"><span>Sunday:</span> <span
+                                style="color:var(--muted);font-style:italic;">By Request</span></div>
                     </div>
                 </div>
             </div>
