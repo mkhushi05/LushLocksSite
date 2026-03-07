@@ -239,14 +239,13 @@ h5 {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 0 40px;
-  height: 80px;
+  width: 100%;
+  padding: 24px 60px;
+  z-index: 9999;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  transition: all 0.4s ease;
+  align-items: center;
+  transition: var(--transition);
 }
 
 #navbar.transparent {
@@ -258,6 +257,15 @@ h5 {
   backdrop-filter: blur(16px);
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.25);
   height: 70px;
+}
+
+/* Force transparent distraction-free navbar on booking page */
+body.booking-page #navbar,
+body.booking-page #navbar.scrolled {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .nav-logo {
@@ -2247,7 +2255,12 @@ textarea.form-control {
   }
 
   #navbar {
-    padding: 0 24px;
+    padding: 24px 24px;
+  }
+
+  body.nav-open #navbar {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .treatments-grid {

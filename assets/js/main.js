@@ -31,6 +31,7 @@ function openMobileNav() {
   mobileNav.classList.add('open');
   mobileNav.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  document.body.classList.add('nav-open');
 }
 
 function closeMobileNav() {
@@ -38,6 +39,7 @@ function closeMobileNav() {
   mobileNav.classList.remove('open');
   mobileNav.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  document.body.classList.remove('nav-open');
 }
 
 if (hamburger) hamburger.addEventListener('click', openMobileNav);
