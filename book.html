@@ -7,17 +7,19 @@
     <meta name="description"
         content="Contact LushLocks & Beauty — Book your appointment with Lynda. Call, WhatsApp, or fill in our contact form. Located in Romford, Essex." />
     <title>Book Your Consultation | LushLocks & Beauty — Advanced Aesthetics</title>
-  <link rel="canonical" href="https://www.lushlocksandbeauty.co.uk/book.html" />
-  <meta property="og:title" content="Book Your Consultation | LushLocks & Beauty — Advanced Aesthetics" />
-  <meta property="og:description" content="Premium skin treatments, anti-wrinkle, microneedling, Hair PRP, fillers and more in Romford, Essex." />
-  <meta property="og:url" content="https://www.lushlocksandbeauty.co.uk/book.html" />
-  <meta property="og:image" content="https://www.lushlocksandbeauty.co.uk/assets/images/logo.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Book Your Consultation | LushLocks & Beauty — Advanced Aesthetics" />
-  <meta name="twitter:description" content="Premium skin treatments, anti-wrinkle, microneedling, Hair PRP, fillers and more in Romford, Essex." />
-  <meta name="twitter:image" content="https://www.lushlocksandbeauty.co.uk/assets/images/logo.png" />
-  <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.lushlocksandbeauty.co.uk/book.html" />
+    <meta property="og:title" content="Book Your Consultation | LushLocks & Beauty — Advanced Aesthetics" />
+    <meta property="og:description"
+        content="Premium skin treatments, anti-wrinkle, microneedling, Hair PRP, fillers and more in Romford, Essex." />
+    <meta property="og:url" content="https://www.lushlocksandbeauty.co.uk/book.html" />
+    <meta property="og:image" content="https://www.lushlocksandbeauty.co.uk/assets/images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Book Your Consultation | LushLocks & Beauty — Advanced Aesthetics" />
+    <meta name="twitter:description"
+        content="Premium skin treatments, anti-wrinkle, microneedling, Hair PRP, fillers and more in Romford, Essex." />
+    <meta name="twitter:image" content="https://www.lushlocksandbeauty.co.uk/assets/images/logo.png" />
+    <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -328,8 +330,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Step Indicator */
@@ -521,6 +530,7 @@
             .treatment-grid {
                 grid-template-columns: 1fr;
             }
+
             .time-slots {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -540,249 +550,265 @@
             </div>
         </a>
     </nav>
-  <main id=\"main-content\">
+    <main id=\"main-content\">
 
-    <div class="mobile-nav">
-        <button class="mobile-nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-        <div class="mobile-nav-brand">
-            <img src="assets/images/logo.png" alt="LushLocks & Beauty Logo" />
-            <div class="mobile-nav-brand-text">
-                <span class="name">LushLocks</span>
-                <span class="sub">Beauty &amp; Aesthetics</span>
+        <div class="mobile-nav">
+            <button class="mobile-nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            <div class="mobile-nav-brand">
+                <img src="assets/images/logo.png" alt="LushLocks & Beauty Logo" />
+                <div class="mobile-nav-brand-text">
+                    <span class="name">LushLocks</span>
+                    <span class="sub">Beauty &amp; Aesthetics</span>
+                </div>
+            </div>
+            <a href="index.html">Home</a>
+            <a href="treatments.html">Treatments</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+            <div class="mobile-nav-actions">
+                <a href="tel:07538312192" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call</a>
+                <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
-        <a href="index.html">Home</a>
-        <a href="treatments.html">Treatments</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
 
-        <div class="mobile-nav-actions">
-            <a href="tel:07538312192" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call</a>
-            <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i
-                    class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        </div>
-    </div>
-
-    <!-- PRIVATE CONSULTATION ROOM LAYOUT -->
-    <style>
-        .booking-split {
-            display: flex;
-            min-height: 100vh;
-            background: var(--dark);
-        }
-
-        .booking-image-side {
-            flex: 1;
-            background-image: url('assets/images/anti-wrinkle.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-
-        .booking-image-side::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(26, 20, 16, 0.2), rgba(26, 20, 16, 0.8));
-        }
-
-        .booking-philosophy {
-            position: relative;
-            z-index: 2;
-            max-width: 500px;
-            text-align: center;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-            padding: 60px 40px;
-            background: rgba(26, 20, 16, 0.6);
-            backdrop-filter: blur(12px);
-        }
-
-        .booking-form-side {
-            flex: 1;
-            padding: 120px 80px;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .booking-form-inner {
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* Overrides for the form on white bg */
-        .booking-form-side .concierge-input {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .booking-form-side .concierge-input:focus {
-            border-bottom-color: var(--gold);
-        }
-
-        @media (max-width: 1024px) {
+        <!-- PRIVATE CONSULTATION ROOM LAYOUT -->
+        <style>
             .booking-split {
-                flex-direction: column;
+                display: flex;
+                min-height: 100vh;
+                background: var(--dark);
             }
 
             .booking-image-side {
-                min-height: 50vh;
+                flex: 1;
+                background-image: url('assets/images/anti-wrinkle.jpg');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+            }
+
+            .booking-image-side::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to right, rgba(26, 20, 16, 0.2), rgba(26, 20, 16, 0.8));
+            }
+
+            .booking-philosophy {
+                position: relative;
+                z-index: 2;
+                max-width: 500px;
+                text-align: center;
+                border: 1px solid rgba(201, 169, 110, 0.3);
+                padding: 60px 40px;
+                background: rgba(26, 20, 16, 0.6);
+                backdrop-filter: blur(12px);
             }
 
             .booking-form-side {
-                padding: 60px 30px;
+                flex: 1;
+                padding: 120px 80px;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
-        }
-    </style>
 
-    <section class="booking-split" id="book">
-        <div class="booking-image-side">
-            <div class="booking-philosophy reveal">
-                <p class="eyebrow" style="color:var(--gold-light); margin-bottom: 16px;">The Private Consultation Room
-                </p>
-                <div class="gold-divider center"><span>✦</span></div>
-                <h2
-                    style="font-family: var(--font-serif); font-size: 2.5rem; color: #fff; line-height: 1.2; margin-bottom: 24px; font-weight: 300;">
-                    Your Journey to <br /><em style="color: var(--gold);">Renewed Confidence</em>
-                </h2>
-                <p
-                    style="color: rgba(255,255,255,0.7); font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8;">
-                    Every appointment begins with a deep understanding of your unique aesthetic goals. We invite you to
-                    share your details, and Lynda will personally prepare for your private consultation.
-                </p>
-            </div>
-        </div>
+            .booking-form-inner {
+                max-width: 600px;
+                margin: 0 auto;
+                width: 100%;
+            }
 
-        <div class="booking-form-side">
-            <div class="booking-form-inner reveal reveal-delay-1">
-                <!-- Step Indicator -->
-                <div class="step-indicator">
-                    <div class="step active" data-step="1">
-                        <div class="step-num">1</div>
-                        <div class="step-label">Treatment</div>
-                    </div>
-                    <div class="step" data-step="2">
-                        <div class="step-num">2</div>
-                        <div class="step-label">Date & Time</div>
-                    </div>
-                    <div class="step" data-step="3">
-                        <div class="step-num">3</div>
-                        <div class="step-label">Details</div>
-                    </div>
+            /* Overrides for the form on white bg */
+            .booking-form-side .concierge-input {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .booking-form-side .concierge-input:focus {
+                border-bottom-color: var(--gold);
+            }
+
+            @media (max-width: 1024px) {
+                .booking-split {
+                    flex-direction: column;
+                }
+
+                .booking-image-side {
+                    min-height: 50vh;
+                }
+
+                .booking-form-side {
+                    padding: 60px 30px;
+                }
+            }
+        </style>
+
+        <section class="booking-split" id="book">
+            <div class="booking-image-side">
+                <div class="booking-philosophy reveal">
+                    <p class="eyebrow" style="color:var(--gold-light); margin-bottom: 16px;">The Private Consultation
+                        Room
+                    </p>
+                    <div class="gold-divider center"><span>✦</span></div>
+                    <h2
+                        style="font-family: var(--font-serif); font-size: 2.5rem; color: #fff; line-height: 1.2; margin-bottom: 24px; font-weight: 300;">
+                        Your Journey to <br /><em style="color: var(--gold);">Renewed Confidence</em>
+                    </h2>
+                    <p
+                        style="color: rgba(255,255,255,0.7); font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8;">
+                        Every appointment begins with a deep understanding of your unique aesthetic goals. We invite you
+                        to
+                        share your details, and Lynda will personally prepare for your private consultation.
+                    </p>
                 </div>
-
-                <form id="contactForm" class="concierge-form" novalidate>
-                    <div class="booking-stages-container">
-                        
-                        <!-- Stage 1: Treatment -->
-                        <div class="booking-stage active" id="stage1">
-                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Select Treatment</h3>
-                            <div class="treatment-grid">
-                                <div class="treatment-option" data-value="Skin Boosters">
-                                    <i class="fa-solid fa-droplet"></i>
-                                    <span>Premium Skin Boosters + PDRN</span>
-                                </div>
-                                <div class="treatment-option" data-value="Anti-Wrinkle">
-                                    <i class="fa-solid fa-sparkles"></i>
-                                    <span>Anti-Wrinkle Treatment</span>
-                                </div>
-                                <div class="treatment-option" data-value="Lip Filler">
-                                    <i class="fa-solid fa-lips"></i>
-                                    <span>Lip Filler</span>
-                                </div>
-                                <div class="treatment-option" data-value="Microneedling">
-                                    <i class="fa-solid fa-microchip"></i>
-                                    <span>Microneedling</span>
-                                </div>
-                                <div class="treatment-option" data-value="Hair PRP">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                    <span>Hair PRP Restoration</span>
-                                </div>
-                                <div class="treatment-option" data-value="Facial/Massage">
-                                    <i class="fa-solid fa-spa"></i>
-                                    <span>Facials & Massage</span>
-                                </div>
-                            </div>
-                            <input type="hidden" id="treatment" name="treatment" required>
-                        </div>
-
-                        <!-- Stage 2: Date & Time -->
-                        <div class="booking-stage" id="stage2">
-                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Select Date & Time</h3>
-                            <div class="form-group">
-                                <label for="bookingDate">Preferred Date</label>
-                                <input type="date" id="bookingDate" name="bookingDate" class="concierge-input" required min="2026-03-10">
-                            </div>
-                            <div class="form-group">
-                                <label style="margin-bottom: 16px;">Available Time Slots</label>
-                                <div class="time-slots">
-                                    <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
-                                    <div class="time-slot" data-time="11:30 AM">11:30 AM</div>
-                                    <div class="time-slot" data-time="01:00 PM">01:00 PM</div>
-                                    <div class="time-slot" data-time="02:30 PM">02:30 PM</div>
-                                    <div class="time-slot" data-time="04:00 PM">04:00 PM</div>
-                                    <div class="time-slot" data-time="05:30 PM">05:30 PM</div>
-                                </div>
-                                <input type="hidden" id="bookingTime" name="bookingTime" required>
-                            </div>
-                        </div>
-
-                        <!-- Stage 3: Contact Details -->
-                        <div class="booking-stage" id="stage3">
-                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Final Details</h3>
-                            <div class="form-row" style="display: flex; gap: 20px;">
-                                <div class="form-group" style="flex:1;">
-                                    <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" class="concierge-input" placeholder="Your first name" required />
-                                </div>
-                                <div class="form-group" style="flex:1;">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" class="concierge-input" placeholder="Your last name" required />
-                                </div>
-                            </div>
-                            <div class="form-row" style="display: flex; gap: 20px;">
-                                <div class="form-group" style="flex:1;">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" class="concierge-input" placeholder="your@email.com" required />
-                                </div>
-                                <div class="form-group" style="flex:1;">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="concierge-input" placeholder="Your phone number" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" class="concierge-input" placeholder="Special requests or additional info..." rows="1"></textarea>
-                            </div>
-                            <div style="margin-bottom:32px;">
-                                <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.75rem;color:var(--text-light);line-height:1.6;font-family:var(--font-sans);text-transform:none;letter-spacing:normal;">
-                                    <input type="checkbox" id="consent" name="consent" style="margin-top:2px;accent-color:var(--gold-dark);" required />
-                                    <span>I agree to the <a href="policy.html#privacy" style="color:var(--gold-dark);text-decoration:underline;">Privacy Policy</a>.</span>
-                                </label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Navigation -->
-                    <div class="stage-nav">
-                        <button type="button" class="btn-prev" id="prevBtn" style="display: none;">Back</button>
-                        <button type="button" class="btn-next" id="nextBtn">Next Step</button>
-                        <button type="submit" class="btn-next" id="submitBtn" style="display: none;">Request Appointment</button>
-                    </div>
-                </form>
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
+            <div class="booking-form-side">
+                <div class="booking-form-inner reveal reveal-delay-1">
+                    <!-- Step Indicator -->
+                    <div class="step-indicator">
+                        <div class="step active" data-step="1">
+                            <div class="step-num">1</div>
+                            <div class="step-label">Treatment</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-num">2</div>
+                            <div class="step-label">Date & Time</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-num">3</div>
+                            <div class="step-label">Details</div>
+                        </div>
+                    </div>
+
+                    <form id="contactForm" class="concierge-form" novalidate>
+                        <div class="booking-stages-container">
+
+                            <!-- Stage 1: Treatment -->
+                            <div class="booking-stage active" id="stage1">
+                                <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">
+                                    Select Treatment</h3>
+                                <div class="treatment-grid">
+                                    <div class="treatment-option" data-value="Skin Boosters">
+                                        <i class="fa-solid fa-droplet"></i>
+                                        <span>Premium Skin Boosters + PDRN</span>
+                                    </div>
+                                    <div class="treatment-option" data-value="Anti-Wrinkle">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                        <span>Anti-Wrinkle Treatment</span>
+                                    </div>
+                                    <div class="treatment-option" data-value="Lip Filler">
+                                        <i class="fa-solid fa-syringe"></i>
+                                        <span>Lip Filler</span>
+                                    </div>
+                                    <div class="treatment-option" data-value="Microneedling">
+                                        <i class="fa-solid fa-microchip"></i>
+                                        <span>Microneedling</span>
+                                    </div>
+                                    <div class="treatment-option" data-value="Hair PRP">
+                                        <i class="fa-solid fa-user-tie"></i>
+                                        <span>Hair PRP Restoration</span>
+                                    </div>
+                                    <div class="treatment-option" data-value="Facial/Massage">
+                                        <i class="fa-solid fa-spa"></i>
+                                        <span>Facials & Massage</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="treatment" name="treatment" required>
+                            </div>
+
+                            <!-- Stage 2: Date & Time -->
+                            <div class="booking-stage" id="stage2">
+                                <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">
+                                    Select Date & Time</h3>
+                                <div class="form-group">
+                                    <label for="bookingDate">Preferred Date</label>
+                                    <input type="date" id="bookingDate" name="bookingDate" class="concierge-input"
+                                        required min="2026-03-10">
+                                </div>
+                                <div class="form-group">
+                                    <label style="margin-bottom: 16px;">Available Time Slots</label>
+                                    <div class="time-slots">
+                                        <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
+                                        <div class="time-slot" data-time="11:30 AM">11:30 AM</div>
+                                        <div class="time-slot" data-time="01:00 PM">01:00 PM</div>
+                                        <div class="time-slot" data-time="02:30 PM">02:30 PM</div>
+                                        <div class="time-slot" data-time="04:00 PM">04:00 PM</div>
+                                        <div class="time-slot" data-time="05:30 PM">05:30 PM</div>
+                                    </div>
+                                    <input type="hidden" id="bookingTime" name="bookingTime" required>
+                                </div>
+                            </div>
+
+                            <!-- Stage 3: Contact Details -->
+                            <div class="booking-stage" id="stage3">
+                                <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">
+                                    Final Details</h3>
+                                <div class="form-row" style="display: flex; gap: 20px;">
+                                    <div class="form-group" style="flex:1;">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" class="concierge-input"
+                                            placeholder="Your first name" required />
+                                    </div>
+                                    <div class="form-group" style="flex:1;">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" class="concierge-input"
+                                            placeholder="Your last name" required />
+                                    </div>
+                                </div>
+                                <div class="form-row" style="display: flex; gap: 20px;">
+                                    <div class="form-group" style="flex:1;">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" class="concierge-input"
+                                            placeholder="your@email.com" required />
+                                    </div>
+                                    <div class="form-group" style="flex:1;">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="concierge-input"
+                                            placeholder="Your phone number" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" name="message" class="concierge-input"
+                                        placeholder="Special requests or additional info..." rows="1"></textarea>
+                                </div>
+                                <div style="margin-bottom:32px;">
+                                    <label
+                                        style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.75rem;color:var(--text-light);line-height:1.6;font-family:var(--font-sans);text-transform:none;letter-spacing:normal;">
+                                        <input type="checkbox" id="consent" name="consent"
+                                            style="margin-top:2px;accent-color:var(--gold-dark);" required />
+                                        <span>I agree to the <a href="policy.html#privacy"
+                                                style="color:var(--gold-dark);text-decoration:underline;">Privacy
+                                                Policy</a>.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="stage-nav">
+                            <button type="button" class="btn-prev" id="prevBtn" style="display: none;">Back</button>
+                            <button type="button" class="btn-next" id="nextBtn">Next Step</button>
+                            <button type="submit" class="btn-next" id="submitBtn" style="display: none;">Request
+                                Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
     </main>
-  <footer>
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -797,12 +823,13 @@
                     <p>Premium beauty and advanced aesthetics by Lynda. Serving Romford, Essex and surrounding areas.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank" rel="noopener noreferrer"
-                            class="footer-social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer" class="footer-social-btn"><i
-                                class="fa-brands fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn"><i
-                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/p/LushLocks-Beauty-61567913738287/" target="_blank"
+                            rel="noopener noreferrer" class="footer-social-btn"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer"
+                            class="footer-social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            class="footer-social-btn"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -831,7 +858,8 @@
                         <li class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:07538312192">07538
                                 312192</a></li>
                         <li class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a
-                                href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                                href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        </li>
                         <li class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a
                                 href="mailto:lyndasmithred3@gmail.com">lyndasmithred3@gmail.com</a></li>
                         <li class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Everyone Active,
@@ -860,7 +888,7 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
             const stages = document.querySelectorAll('.booking-stage');
             const steps = document.querySelectorAll('.step');
@@ -869,7 +897,7 @@
             const submitBtn = document.getElementById('submitBtn');
             const treatmentInput = document.getElementById('treatment');
             const bookingTimeInput = document.getElementById('bookingTime');
-            
+
             let currentStage = 1;
 
             // --- Treatment Selection ---
@@ -905,7 +933,7 @@
 
                 // Show/Hide buttons
                 prevBtn.style.display = currentStage === 1 ? 'none' : 'block';
-                
+
                 if (currentStage === 3) {
                     nextBtn.style.display = 'none';
                     submitBtn.style.display = 'block';
@@ -952,7 +980,7 @@
                     const formData = new FormData(form);
                     const data = Object.fromEntries(formData.entries());
                     console.log('Booking Data Collected:', data);
-                    
+
                     // Show Success placeholder
                     form.innerHTML = `
                         <div style="text-align: center; padding: 60px 20px; animation: fadeIn 0.8s ease;">
@@ -972,14 +1000,15 @@
         });
     </script>
 
-  <div id="cookie-notice" class="cookie-notice" style="display: none;">
-    <div class="container cookie-content">
-      <p>We use cookies to ensure you have the best experience in our private clinic. By continuing to browse, you agree to our <a href="policy.html#cookies">Cookie Policy</a>.</p>
-      <div class="cookie-actions">
-        <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
-      </div>
+    <div id="cookie-notice" class="cookie-notice" style="display: none;">
+        <div class="container cookie-content">
+            <p>We use cookies to ensure you have the best experience in our private clinic. By continuing to browse, you
+                agree to our <a href="policy.html#cookies">Cookie Policy</a>.</p>
+            <div class="cookie-actions">
+                <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>
