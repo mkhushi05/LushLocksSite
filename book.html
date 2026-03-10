@@ -311,9 +311,218 @@
             color: var(--gold);
         }
 
-        @media (max-width: 768px) {
-            .concierge-form-wrap {
-                padding: 40px 24px;
+        /* ─── Multi-Stage Booking UI ─── */
+        .booking-stages-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 480px;
+        }
+
+        .booking-stage {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .booking-stage.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Step Indicator */
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-light);
+            z-index: 1;
+        }
+
+        .step {
+            z-index: 2;
+            background: #fff;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            transition: var(--transition);
+        }
+
+        .step.active .step-num {
+            background: var(--dark);
+            color: var(--gold);
+            border-color: var(--dark);
+        }
+
+        .step-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        .step.active .step-label {
+            color: var(--dark);
+        }
+
+        /* Treatment Grid */
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .treatment-option {
+            border: 1px solid var(--border-light);
+            padding: 24px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #fff;
+        }
+
+        .treatment-option:hover {
+            border-color: var(--gold);
+            background: var(--warm-white);
+        }
+
+        .treatment-option.selected {
+            border-color: var(--gold);
+            background: var(--champagne);
+            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.15);
+        }
+
+        .treatment-option i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .treatment-option span {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        /* Date/Time Picker Mockup Styles */
+        .date-picker-wrap {
+            margin-bottom: 32px;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .time-slot {
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .time-slot:hover {
+            background: var(--warm-white);
+            border-color: var(--gold);
+        }
+
+        .time-slot.selected {
+            background: var(--dark);
+            color: var(--gold);
+            border-color: var(--dark);
+        }
+
+        /* Navigation Buttons */
+        .stage-nav {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .btn-prev {
+            flex: 1;
+            padding: 16px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-prev:hover {
+            color: var(--dark);
+            border-color: var(--dark);
+        }
+
+        .btn-next {
+            flex: 2;
+            padding: 16px;
+            background: var(--dark);
+            color: var(--gold);
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-next:hover {
+            background: var(--gold-dark);
+            color: #fff;
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 600px) {
+            .treatment-grid {
+                grid-template-columns: 1fr;
+            }
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -451,85 +660,121 @@
 
         <div class="booking-form-side">
             <div class="booking-form-inner reveal reveal-delay-1">
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-num">1</div>
+                        <div class="step-label">Treatment</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-num">2</div>
+                        <div class="step-label">Date & Time</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-num">3</div>
+                        <div class="step-label">Details</div>
+                    </div>
+                </div>
+
                 <form id="contactForm" class="concierge-form" novalidate>
-                    <div class="form-row">
-                        <div class="form-group" style="flex:1;">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" class="concierge-input"
-                                placeholder="Your first name" required />
+                    <div class="booking-stages-container">
+                        
+                        <!-- Stage 1: Treatment -->
+                        <div class="booking-stage active" id="stage1">
+                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Select Treatment</h3>
+                            <div class="treatment-grid">
+                                <div class="treatment-option" data-value="Skin Boosters">
+                                    <i class="fa-solid fa-droplet"></i>
+                                    <span>Premium Skin Boosters + PDRN</span>
+                                </div>
+                                <div class="treatment-option" data-value="Anti-Wrinkle">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                    <span>Anti-Wrinkle Treatment</span>
+                                </div>
+                                <div class="treatment-option" data-value="Lip Filler">
+                                    <i class="fa-solid fa-lips"></i>
+                                    <span>Lip Filler</span>
+                                </div>
+                                <div class="treatment-option" data-value="Microneedling">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Microneedling</span>
+                                </div>
+                                <div class="treatment-option" data-value="Hair PRP">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <span>Hair PRP Restoration</span>
+                                </div>
+                                <div class="treatment-option" data-value="Facial/Massage">
+                                    <i class="fa-solid fa-spa"></i>
+                                    <span>Facials & Massage</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="treatment" name="treatment" required>
                         </div>
-                        <div class="form-group" style="flex:1;">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" class="concierge-input"
-                                placeholder="Your last name" required />
+
+                        <!-- Stage 2: Date & Time -->
+                        <div class="booking-stage" id="stage2">
+                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Select Date & Time</h3>
+                            <div class="form-group">
+                                <label for="bookingDate">Preferred Date</label>
+                                <input type="date" id="bookingDate" name="bookingDate" class="concierge-input" required min="2026-03-10">
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-bottom: 16px;">Available Time Slots</label>
+                                <div class="time-slots">
+                                    <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
+                                    <div class="time-slot" data-time="11:30 AM">11:30 AM</div>
+                                    <div class="time-slot" data-time="01:00 PM">01:00 PM</div>
+                                    <div class="time-slot" data-time="02:30 PM">02:30 PM</div>
+                                    <div class="time-slot" data-time="04:00 PM">04:00 PM</div>
+                                    <div class="time-slot" data-time="05:30 PM">05:30 PM</div>
+                                </div>
+                                <input type="hidden" id="bookingTime" name="bookingTime" required>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-row">
-                        <div class="form-group" style="flex:1;">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="concierge-input"
-                                placeholder="your@email.com" required />
+                        <!-- Stage 3: Contact Details -->
+                        <div class="booking-stage" id="stage3">
+                            <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">Final Details</h3>
+                            <div class="form-row" style="display: flex; gap: 20px;">
+                                <div class="form-group" style="flex:1;">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" class="concierge-input" placeholder="Your first name" required />
+                                </div>
+                                <div class="form-group" style="flex:1;">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" class="concierge-input" placeholder="Your last name" required />
+                                </div>
+                            </div>
+                            <div class="form-row" style="display: flex; gap: 20px;">
+                                <div class="form-group" style="flex:1;">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="concierge-input" placeholder="your@email.com" required />
+                                </div>
+                                <div class="form-group" style="flex:1;">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="concierge-input" placeholder="Your phone number" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" class="concierge-input" placeholder="Special requests or additional info..." rows="1"></textarea>
+                            </div>
+                            <div style="margin-bottom:32px;">
+                                <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.75rem;color:var(--text-light);line-height:1.6;font-family:var(--font-sans);text-transform:none;letter-spacing:normal;">
+                                    <input type="checkbox" id="consent" name="consent" style="margin-top:2px;accent-color:var(--gold-dark);" required />
+                                    <span>I agree to the <a href="policy.html#privacy" style="color:var(--gold-dark);text-decoration:underline;">Privacy Policy</a>.</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-group" style="flex:1;">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="concierge-input"
-                                placeholder="Your phone number" />
-                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="treatment">Treatment of Interest</label>
-                        <select id="treatment" name="treatment" class="concierge-input">
-                            <option value="">Select a treatment (optional)</option>
-                            <optgroup label="Advanced Aesthetics">
-                                <option>Premium Skin Boosters + PDRN</option>
-                                <option>Microneedling</option>
-                                <option>Anti-Wrinkle Treatment</option>
-                                <option>Lip Filler</option>
-                            </optgroup>
-                            <optgroup label="Hair Treatments">
-                                <option>Hair PRP</option>
-                            </optgroup>
-                            <optgroup label="Beauty &amp; Relaxation">
-                                <option>Dermaplaning</option>
-                                <option>Full Facial</option>
-                                <option>Massage</option>
-                            </optgroup>
-                            <option>General Enquiry / Consultation</option>
-                        </select>
+                    <!-- Navigation -->
+                    <div class="stage-nav">
+                        <button type="button" class="btn-prev" id="prevBtn" style="display: none;">Back</button>
+                        <button type="button" class="btn-next" id="nextBtn">Next Step</button>
+                        <button type="submit" class="btn-next" id="submitBtn" style="display: none;">Request Appointment</button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" class="concierge-input"
-                            placeholder="Tell us a little about what you're looking for, any concerns, or preferred dates / times..."
-                            rows="1"></textarea>
-                    </div>
-
-                    <div style="margin-bottom:32px;">
-                        <label
-                            style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.75rem;color:var(--text-light);line-height:1.6;font-family:var(--font-sans);text-transform:none;letter-spacing:normal;">
-                            <input type="checkbox" id="consent" name="consent"
-                                style="margin-top:2px;accent-color:var(--gold-dark);" required />
-                            <span>I agree to my personal information being used to respond to my enquiry, in accordance
-                                with
-                                the <a href="policy.html#privacy"
-                                    style="color:var(--gold-dark);text-decoration:underline;white-space:nowrap;">Privacy
-                                    Policy</a>.</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="concierge-submit" style="background: var(--dark); color: var(--gold);">
-                        <i class="fa-solid fa-calendar-check" style="font-size: 1.1rem; opacity: 0.8;"></i>
-                        Request Appointment
-                    </button>
-
-                    <p
-                        style="margin-top:24px;font-size:0.75rem;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:0.1em;">
-                        Or book immediately via <a href="https://wa.me/447538312192" target="_blank" rel="noopener noreferrer"
-                            style="color:var(--gold-dark);font-weight:700;text-decoration:none;">WhatsApp</a>
-                    </p>
                 </form>
             </div>
         </div>
@@ -614,6 +859,118 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const stages = document.querySelectorAll('.booking-stage');
+            const steps = document.querySelectorAll('.step');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const treatmentInput = document.getElementById('treatment');
+            const bookingTimeInput = document.getElementById('bookingTime');
+            
+            let currentStage = 1;
+
+            // --- Treatment Selection ---
+            const options = document.querySelectorAll('.treatment-option');
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    treatmentInput.value = opt.dataset.value;
+                    validateNext();
+                });
+            });
+
+            // --- Time Slot Selection ---
+            const slots = document.querySelectorAll('.time-slot');
+            slots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    slots.forEach(s => s.classList.remove('selected'));
+                    slot.classList.add('selected');
+                    bookingTimeInput.value = slot.dataset.time;
+                    validateNext();
+                });
+            });
+
+            // --- Navigation Logic ---
+            function updateStages() {
+                stages.forEach((stage, idx) => {
+                    stage.classList.toggle('active', idx === currentStage - 1);
+                });
+                steps.forEach((step, idx) => {
+                    step.classList.toggle('active', idx < currentStage);
+                });
+
+                // Show/Hide buttons
+                prevBtn.style.display = currentStage === 1 ? 'none' : 'block';
+                
+                if (currentStage === 3) {
+                    nextBtn.style.display = 'none';
+                    submitBtn.style.display = 'block';
+                } else {
+                    nextBtn.style.display = 'block';
+                    submitBtn.style.display = 'none';
+                }
+
+                validateNext();
+            }
+
+            function validateNext() {
+                let isValid = false;
+                if (currentStage === 1) {
+                    isValid = treatmentInput.value !== "";
+                } else if (currentStage === 2) {
+                    isValid = bookingTimeInput.value !== "" && document.getElementById('bookingDate').value !== "";
+                } else {
+                    isValid = true; // Handled by native validation on stage 3
+                }
+                nextBtn.disabled = !isValid;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStage < 3) {
+                    currentStage++;
+                    updateStages();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStage > 1) {
+                    currentStage--;
+                    updateStages();
+                }
+            });
+
+            document.getElementById('bookingDate').addEventListener('change', validateNext);
+
+            // --- Form Submission ---
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (form.checkValidity()) {
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Booking Data Collected:', data);
+                    
+                    // Show Success placeholder
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 60px 20px; animation: fadeIn 0.8s ease;">
+                            <div style="font-size: 4rem; color: var(--gold); margin-bottom: 24px;"><i class="fa-solid fa-circle-check"></i></div>
+                            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 16px;">Request Received</h2>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 30px;">Thank you, ${data.firstName}. Lynda has received your request and will contact you shortly to confirm your consultation at LushLocks.</p>
+                            <a href="index.html" class="btn btn-outline">Back to Home</a>
+                        </div>
+                    `;
+                    document.querySelector('.step-indicator').style.opacity = '0.3';
+                } else {
+                    form.reportValidity();
+                }
+            });
+
+            updateStages(); // Initial run
+        });
+    </script>
 
   <div id="cookie-notice" class="cookie-notice" style="display: none;">
     <div class="container cookie-content">
