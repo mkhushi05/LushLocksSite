@@ -444,36 +444,215 @@
             line-height: 1.2;
         }
 
-        /* Date/Time Picker Mockup Styles */
-        .date-picker-wrap {
+        /* Hybrid Date Selector Styles */
+        .date-picker-container {
+            position: relative;
+            background: #fff;
+            padding: 24px;
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            border-radius: 4px;
             margin-bottom: 32px;
+            display: block !important;
         }
 
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .month-header {
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding: 0 8px;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .month-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .month-nav-btn {
+            background: none;
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--dark);
+        }
+
+        .month-nav-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--warm-white);
+        }
+
+        .month-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .date-selector-wrapper {
+            position: relative;
+            display: flex !important;
+            align-items: center;
+            width: 100%;
+        }
+
+        .date-selector {
+            display: flex !important;
             gap: 12px;
+            overflow-x: auto;
+            padding: 8px 4px 16px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            width: 100%;
+        }
+
+        .date-selector::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            z-index: 10;
+            background: #fff;
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .date-selector-wrapper:hover .scroll-btn.visible {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .scroll-btn-left { left: -16px; }
+        .scroll-btn-right { right: -16px; }
+
+        .scroll-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .date-tile {
+            flex: 0 0 90px;
+            height: 120px;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            background: #fff;
+            cursor: pointer;
+            transition: var(--transition);
+            scroll-snap-align: center;
+            user-select: none;
+            border-radius: 4px;
+        }
+
+        .date-tile:hover {
+            border-color: var(--gold);
+            background: var(--warm-white);
+        }
+
+        .date-tile.selected {
+            background: var(--dark) !important;
+            border-color: var(--dark) !important;
+            color: var(--gold) !important;
+        }
+
+        .date-tile.today {
+            border-color: var(--gold-dark);
+            position: relative;
+        }
+
+        .date-tile.today::after {
+            content: 'Today';
+            position: absolute;
+            top: 6px;
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        .date-tile .day-name {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        .date-tile .date-num {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .date-tile .month-name {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .scroll-btn { display: none !important; }
+            .date-picker-container { padding: 16px; }
+        }
+
+        /* Time Selection Styles */
+        .time-slots {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 12px !important;
+            margin-top: 16px;
+            width: 100%;
         }
 
         .time-slot {
-            padding: 12px;
-            border: 1px solid var(--border-light);
+            padding: 16px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
             text-align: center;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: var(--transition);
+            background: #fff;
+            border-radius: 4px;
+            display: block !important;
         }
 
         .time-slot:hover {
             background: var(--warm-white);
-            border-color: var(--gold);
+            border-color: var(--gold) !important;
         }
 
         .time-slot.selected {
-            background: var(--dark);
-            color: var(--gold);
-            border-color: var(--dark);
+            background: #1A1410 !important;
+            color: #C9A96E !important;
+            border-color: #1A1410 !important;
         }
 
         /* Navigation Buttons */
@@ -728,13 +907,34 @@
                             <div class="booking-stage" id="stage2">
                                 <h3 style="margin-bottom: 24px; font-family: var(--font-serif); font-size: 1.8rem;">
                                     Select Date & Time</h3>
-                                <div class="form-group">
-                                    <label for="bookingDate">Preferred Date</label>
-                                    <input type="date" id="bookingDate" name="bookingDate" class="concierge-input"
-                                        required min="2026-03-10">
+                                
+                                <div class="date-picker-container">
+                                    <div class="month-header">
+                                        <button type="button" class="month-nav-btn" id="prevMonth" aria-label="Previous Month">
+                                            <i class="fa-solid fa-chevron-left"></i>
+                                        </button>
+                                        <div class="month-title" id="currentMonthYear">March 2026</div>
+                                        <button type="button" class="month-nav-btn" id="nextMonth" aria-label="Next Month">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="date-selector-wrapper">
+                                        <button type="button" class="scroll-btn scroll-btn-left" id="scrollLeft">
+                                            <i class="fa-solid fa-chevron-left"></i>
+                                        </button>
+                                        <div id="dateSelector" class="date-selector">
+                                            <!-- Dates populated by JavaScript -->
+                                        </div>
+                                        <button type="button" class="scroll-btn scroll-btn-right" id="scrollRight">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="bookingDate" name="bookingDate" required>
                                 </div>
+
                                 <div class="form-group">
-                                    <label style="margin-bottom: 16px;">Available Time Slots</label>
+                                    <label style="margin-bottom: 16px; font-weight: 600;">Available Time Slots</label>
                                     <div class="time-slots">
                                         <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
                                         <div class="time-slot" data-time="11:30 AM">11:30 AM</div>
@@ -896,9 +1096,101 @@
             const prevBtn = document.getElementById('prevBtn');
             const submitBtn = document.getElementById('submitBtn');
             const treatmentInput = document.getElementById('treatment');
+            const bookingDateInput = document.getElementById('bookingDate');
             const bookingTimeInput = document.getElementById('bookingTime');
+            
+            const dateSelector = document.getElementById('dateSelector');
+            const currentMonthYearLabel = document.getElementById('currentMonthYear');
+            const prevMonthBtn = document.getElementById('prevMonth');
+            const nextMonthBtn = document.getElementById('nextMonth');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
 
             let currentStage = 1;
+            let displayDate = new Date();
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            // --- Dynamic Date Selector Generation ---
+            function populateDates(year, month) {
+                dateSelector.innerHTML = '';
+                const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                
+                currentMonthYearLabel.textContent = `${months[month]} ${year}`;
+                
+                // Disable prev month if viewing current month
+                prevMonthBtn.disabled = (year === today.getFullYear() && month === today.getMonth());
+
+                // Start from the first day of the month
+                let date = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0).getDate();
+
+                for (let i = 1; i <= lastDay; i++) {
+                    const tempDate = new Date(year, month, i);
+                    
+                    // Don't show past dates
+                    if (tempDate < today) continue;
+
+                    const tile = document.createElement('div');
+                    tile.className = 'date-tile';
+                    if (tempDate.getTime() === today.getTime()) tile.classList.add('today');
+                    
+                    const fullDate = `${year}-${(month + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
+                    tile.dataset.value = fullDate;
+
+                    tile.innerHTML = `
+                        <div class="day-name">${days[tempDate.getDay()]}</div>
+                        <div class="date-num">${i}</div>
+                        <div class="month-name">${months[month].substring(0, 3)}</div>
+                    `;
+
+                    if (bookingDateInput.value === fullDate) {
+                        tile.classList.add('selected');
+                    }
+
+                    tile.addEventListener('click', () => {
+                        document.querySelectorAll('.date-tile').forEach(t => t.classList.remove('selected'));
+                        tile.classList.add('selected');
+                        bookingDateInput.value = fullDate;
+                        tile.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        validateNext();
+                    });
+
+                    dateSelector.appendChild(tile);
+                }
+                
+                updateScrollButtons();
+            }
+
+            function updateScrollButtons() {
+                const hasScroll = dateSelector.scrollWidth > dateSelector.clientWidth;
+                scrollLeftBtn.classList.toggle('visible', hasScroll);
+                scrollRightBtn.classList.toggle('visible', hasScroll);
+            }
+
+            prevMonthBtn.addEventListener('click', () => {
+                displayDate.setMonth(displayDate.getMonth() - 1);
+                populateDates(displayDate.getFullYear(), displayDate.getMonth());
+            });
+
+            nextMonthBtn.addEventListener('click', () => {
+                displayDate.setMonth(displayDate.getMonth() + 1);
+                populateDates(displayDate.getFullYear(), displayDate.getMonth());
+            });
+
+            scrollLeftBtn.addEventListener('click', () => {
+                dateSelector.scrollBy({ left: -200, behavior: 'smooth' });
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                dateSelector.scrollBy({ left: 200, behavior: 'smooth' });
+            });
+
+            dateSelector.addEventListener('scroll', updateScrollButtons);
+            window.addEventListener('resize', updateScrollButtons);
+
+            populateDates(displayDate.getFullYear(), displayDate.getMonth());
 
             // --- Treatment Selection ---
             const options = document.querySelectorAll('.treatment-option');
